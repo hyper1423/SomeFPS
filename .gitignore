@@ -1,0 +1,11 @@
+### Libraries ###
+include/
+lib/
+*.dll
+
+### Binaries ###
+x64/
+Debug/
+
+### Miscellaneous ###
+.vscode/
