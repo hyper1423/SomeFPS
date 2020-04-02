@@ -1,4 +1,5 @@
 #pragma once
+#define GLFW_DLL
 #include "include/GL/glew.h"
 #include "include/GLFW/glfw3.h"
 #include "include/glm/glm.hpp"
@@ -7,7 +8,7 @@
 #pragma comment(lib, "lib/glfw3dll.lib")
 
 namespace callbacks {
-	void ErrorCallback(int errCode, const char* errDesc);
+	extern "C" void ErrorCallback(int errCode, const char* errDesc);
 }
 
 class Logger {
