@@ -7,4 +7,5 @@
 
 #include "callbacks.hpp"
 #include "logging.hpp"
-#include "renderer.hpp"
+#include "window.hpp"
+#include "render.hpp"

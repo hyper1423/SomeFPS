@@ -2,17 +2,24 @@
 
 #include <ctime>
 
-Logger::Logger() {
-	logStream = &std::cout;
-	logLevel = LOGLEVEL_INFO;
-}
-
-Logger Logger::getInstance() {
-	return Logger();
+Logger::Logger(std::string name, std::ostream* stream, LoggerLevel level) : logStream(stream), logLevel(level) {
+	if (name.empty()) {
+		logName = "ANNONYMOUS LOGGER";
+	} else {
+		logName = name;
+	}
 }
 
 void Logger::setLogStream(std::ostream* stream) {
 	logStream = stream;
+}
+
+void Logger::setName(std::string name) {
+	if (name.empty()) {
+		logName = "ANNONYMOUS LOGGER";
+	} else {
+		logName = name;
+	}
 }
 
 Logger& Logger::setLogLevel(Logger::LoggerLevel level) {
@@ -25,8 +32,9 @@ Logger& Logger::log(std::string str) {
 	struct tm time_now;
 	localtime_s(&time_now, &timestamp);
 
-	*logStream << "[AT " << __FILE__ << ":" << __LINE__ << ", IN FUNCTION " << __func__ << "] "
-		"[" << time_now.tm_year + 1900 << "/" << time_now.tm_mon << "/" << time_now.tm_mday << 
+	*logStream << "[" << logName << "] ";
+
+	*logStream << "[" << time_now.tm_year + 1900 << "/" << time_now.tm_mon << "/" << time_now.tm_mday << 
 		" " << time_now.tm_hour << ":" << time_now.tm_min << ":" << time_now.tm_sec << "] ";
 
 	switch (logLevel) {

@@ -12,16 +12,16 @@ public:
 		LOGLEVEL_ERROR,
 		LOGLEVEL_FATAL_ERROR
 	};
-	static Logger getInstance();
+	Logger(std::string name = "", std::ostream* stream = &std::cout, LoggerLevel level = LOGLEVEL_INFO);
+	
 	void setLogStream(std::ostream* stream);
+	void setName(std::string name);
 	Logger& setLogLevel(LoggerLevel level);
 	Logger& log(std::string str);
 	Logger& log(std::string str, LoggerLevel level);
 
 private:
-	static const Logger instance;
+	std::string logName;
 	std::ostream* logStream;
 	LoggerLevel logLevel;
-
-	Logger();
 };

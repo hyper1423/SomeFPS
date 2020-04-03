@@ -4,7 +4,7 @@
 	
 int main() {
 	glfwSetErrorCallback(callbacks::ErrorCallback);
-	Logger logger = Logger::getInstance();
-	logger.setLogStream(&std::cout);
-	logger.log("hello");
+	Logger logger("Main");
+	logger.log("hello", Logger::LOGLEVEL_INFO);
+	callbacks::ErrorCallback(1, "asdf");
 }
