@@ -1,5 +1,6 @@
-#include "someFPS.hpp"
-#include <iostream>
+#include "callbacks.hpp"
+#include "logging.hpp"
+#include <string>
 
 namespace callbacks {
     void ErrorCallback(int errCode, const char* errDesc) {

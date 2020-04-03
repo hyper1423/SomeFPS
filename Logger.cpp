@@ -1,4 +1,5 @@
-#include "someFPS.hpp"
+#include "logging.hpp"
+
 #include <ctime>
 
 Logger::Logger() {

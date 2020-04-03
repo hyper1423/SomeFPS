@@ -1,10 +1,10 @@
 #include "someFPS.hpp"
-#include <fstream>
+
+#include <iostream>
 	
 int main() {
 	glfwSetErrorCallback(callbacks::ErrorCallback);
 	Logger logger = Logger::getInstance();
-	std::ofstream asdf("aa.txt");
-	logger.setLogStream(&asdf);
+	logger.setLogStream(&std::cout);
 	logger.log("hello");
 }
