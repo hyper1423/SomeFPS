@@ -54,7 +54,8 @@ Logger& Logger::log(std::string str) {
 			*logStream << "[FATAL ERROR] ";
 			break;
 		default:
-			throw std::invalid_argument("Invalid logging type");
+			*logStream << "[LOGGING ERROR] Invalid logging type";
+			throw std::domain_error("Invalid logging type");
 			break;
 	}
 
