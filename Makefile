@@ -1,6 +1,6 @@
 CXX = g++
 CXXFLAGS = -m64 -W -Wall
-OBJS = Main.o Callbacks.o Logger.o Window.o Renderer.o
+OBJS = Main.o Callbacks.o Logger.o Window.o Renderer.o IRenderable.o
 TARGET = SomeFPS.exe
 LDFLAGS = -L".\lib"
 LDLIBS = -lglfw3dll -lopengl32 -lglew32
@@ -18,6 +18,8 @@ Window.o: Window.cpp window.hpp
 	${CXX} ${CXXFLAGS} -c -g Window.cpp -o Window.o
 Renderer.o: Renderer.cpp rendering.hpp
 	${CXX} ${CXXFLAGS} -c -g Renderer.cpp -o Renderer.o
+IRenderable.o: Irenderable.cpp rendering.hpp
+	${CXX} ${CXXFLAGS} -c -g IRenderable.cpp -o IRenderable.o
 
 clean:
 	del -f ${TARGET}

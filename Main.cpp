@@ -10,10 +10,9 @@ int main() {
 	if (!glfwInit()) exit(EXIT_FAILURE);
 
 	Window window(1920, 1080, "Title", nullptr, nullptr);
-	window.setContext();
 	window.initGL();
 
-	window.setClearColor(0.8f, 0.9f, 1.0f, 1.0f);
+	window.setClearColor(0.125f, 0.165f, 0.290f, 1.000f);
 
 	do {
 		window.clear();

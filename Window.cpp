@@ -21,15 +21,18 @@ Window::~Window() {
 		glfwDestroyWindow(window); // This may also happen when GLFW is already terminated.
 }
 
-void Window::setContext() {
-	glfwMakeContextCurrent(window);
+void Window::use() {
+	if (glfwGetCurrentContext() != window)
+		glfwMakeContextCurrent(window);
 }
 
 void Window::setClearColor(float r, float g, float b, float a) {
+	use();
 	glClearColor(r, g, b, a);
 }
 
 void Window::initGL() {
+	use();
 	if (glewInit() != GLEW_OK) {
 		logger.log("Error occurred while initiating GLEW");
 		exit(EXIT_FAILURE);
@@ -37,10 +40,12 @@ void Window::initGL() {
 }
 
 void Window::update() {
+	use();
 	glfwSwapBuffers(window);
 }
 
 void Window::clear() {
+	use();
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
