@@ -1,7 +1,9 @@
-#include "include/GL/glew.h"
-#include "include/glm/glm.hpp"
+#pragma once
 
 #include "vertices.hpp"
+
+#include "include/GL/glew.h"
+#include "include/glm/glm.hpp"
 
 #include <vector>
 

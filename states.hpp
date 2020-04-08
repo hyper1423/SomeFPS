@@ -1,5 +1,7 @@
-// Uhhhhh...s
+// Uhhhhh...
 // I know singletons cause a lot of bad thing, but I had to use this to optimize, sorry.
+#pragma once
+
 #include "include/GL/glew.h"
 
 #include <optional>
@@ -15,6 +17,6 @@ private:
 
 	static std::optional<StateManager> instance;
 
-	GLuint vertexBufferCache = (GLuint) nullptr;
-	GLuint vertexArrayCache = (GLuint) nullptr;
+	GLuint vertexBufferCache = 0;
+	GLuint vertexArrayCache = 0;
 };

@@ -16,7 +16,7 @@ VertexArray& VertexArray::setVBOData(std::vector<GLfloat> vertices, GLenum usage
 	StateManager& states = StateManager::getInstance();
 	states.bindVertexArray(VAO);
 	states.getInstance().bindVertexBuffer(GL_ARRAY_BUFFER, VBO);
-	glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(glm::vec3), &vertices[0], usage);
+	glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(GLfloat), &vertices[0], usage);
 	int stride = 3 + 3 + 2;
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, stride * sizeof(GLfloat), (void*) 0);
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, stride * sizeof(GLfloat), (void*) (3 * sizeof(GLfloat)));

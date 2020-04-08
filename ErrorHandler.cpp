@@ -5,7 +5,7 @@
 namespace callbacks {
 	void ErrorCallback(int errCode, const char* errDesc) {
 		Logger logger("ErrorCallback");
-		logger.setLogLevel(Logger::LOGLEVEL_FATAL_ERROR)
+		logger.setLogLevel(Logger::LoggerLevel::LOGLEVEL_FATAL_ERROR)
 		.log("Error occurred in GLFW library: ")
 		.log("Error code: " + std::to_string(errCode))
 		.log(std::string(errDesc));

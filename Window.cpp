@@ -34,7 +34,7 @@ void Window::setClearColor(float r, float g, float b, float a) {
 void Window::initGL() {
 	use();
 	if (glewInit() != GLEW_OK) {
-		logger.log("Error occurred while initiating GLEW");
+		logger.log("Error occurred while initiating GLEW", Logger::LoggerLevel::LOGLEVEL_FATAL_ERROR);
 		exit(EXIT_FAILURE);
 	}
 }

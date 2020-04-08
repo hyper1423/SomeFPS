@@ -1,9 +1,9 @@
 #pragma once
 
+#include "logging.hpp"
+
 #include "include/GL/glew.h"
 #include "include/GLFW/glfw3.h"
-
-#include "logging.hpp"
 
 #include <string>
 #include <memory>

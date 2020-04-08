@@ -9,17 +9,17 @@ int main() {
 	
 	if (!glfwInit()) exit(EXIT_FAILURE);
 
-	Window window(1920, 1080, "Title", nullptr, nullptr);
+	Window window(1280, 720, "Title", nullptr, nullptr);
 	window.initGL();
 
 	window.setClearColor(0.125f, 0.165f, 0.290f, 1.000f);
 
 	do {
 		window.clear();
-
+		
 		window.update();
 		glfwPollEvents();
 	} while (window.getKeyAction(GLFW_KEY_ESCAPE) != GLFW_PRESS && !window.shouldClose());
 
-	glfwTerminate();
+	
 }

@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -m64 -W -Wall
+CXXFLAGS = -m64 -W -Wall -std=c++17
 OBJS = Main.o Callbacks.o Logger.o Window.o Renderer.o IRenderable.o
 TARGET = SomeFPS.exe
 LDFLAGS = -L".\lib"
@@ -10,8 +10,8 @@ ${TARGET}: ${OBJS}
 
 Main.o: Main.cpp someFPS.hpp
 	${CXX} ${CXXFLAGS} -c -g Main.cpp -o Main.o
-Callbacks.o: Callbacks.cpp logging.hpp callbacks.hpp
-	${CXX} ${CXXFLAGS} -c -g Callbacks.cpp -o Callbacks.o
+Callbacks.o: ErrorHandler.cpp logging.hpp callbacks.hpp
+	${CXX} ${CXXFLAGS} -c -g ErrorHandler.cpp -o Callbacks.o
 Logger.o: Logger.cpp logging.hpp
 	${CXX} ${CXXFLAGS} -c -g Logger.cpp -o Logger.o
 Window.o: Window.cpp window.hpp

@@ -1,7 +1,8 @@
-#include "include/GL/glew.h"
-#include "include/glm/glm.hpp"
+#pragma once
 
 #include "states.hpp"
+
+#include "include/GL/glew.h"
 
 #include <vector>
 
