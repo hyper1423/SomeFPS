@@ -6,7 +6,7 @@
 class Logger {
 public:
 	enum LoggerLevel {
-		LOGLEVEL_DEBUG,
+		LOGLEVEL_DEBUG = 1,
 		LOGLEVEL_INFO,
 		LOGLEVEL_WARNING,
 		LOGLEVEL_ERROR,

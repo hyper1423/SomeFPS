@@ -7,7 +7,6 @@
 
 #include <string>
 #include <memory>
-#include <functional>
 
 class Window {
 public:
@@ -25,6 +24,7 @@ public:
 
 	void setFrameBufferSizeCallback(void (* callback)(GLFWwindow*, int, int));
 
+	void use();
 private:
 	GLFWwindow* window = nullptr;
 	unsigned int width = 1024;
@@ -32,6 +32,4 @@ private:
 	std::string title = "GLFW window";
 	bool isFullScreen = false;
 	Logger logger;
-
-	void use();
 };

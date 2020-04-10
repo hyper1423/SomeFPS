@@ -9,8 +9,7 @@
 class VertexArray {
 public:
 	VertexArray();
-	void setBufferAttribute(GLuint bufferIndex, GLuint elementsNumber, 
-		GLenum type, GLboolean normalize, GLsizei stride, const void* offset);
+	
 	/* 
 	 * Sets VBO data.
 	 * vertices formatted as:
@@ -19,7 +18,15 @@ public:
 	 */
 	VertexArray& setVBOData(std::vector<GLfloat> vertices, GLenum usage);
 	VertexArray& setEBOData(std::vector<GLushort> indexes, GLenum usage);
+
+	GLuint getID() const;
+	GLuint getVBO() const;
+	GLuint getEBO() const;
+
 private:
+	void setBufferAttribute(GLuint elementsNumber, 
+		GLenum type, GLboolean normalize, GLsizei stride, const void* offset);
+	
 	GLuint VAO;
 	GLuint VBO;
 	GLuint EBO;
