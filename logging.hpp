@@ -1,4 +1,5 @@
-#pragma once
+#ifndef LOGGING_HPP
+#define LOGGING_HPP
 
 #include <iostream>
 #include <string>
@@ -25,3 +26,9 @@ private:
 	std::ostream* logStream;
 	LoggerLevel logLevel;
 };
+
+namespace constants {
+	Logger defaultLogger("SomeFPS");
+}
+
+#endif

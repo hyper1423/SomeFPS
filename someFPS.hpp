@@ -1,5 +1,4 @@
 #pragma once
-#define GLFW_DLL
 
 #include "callbacks.hpp"
 #include "logging.hpp"

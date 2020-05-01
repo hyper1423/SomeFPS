@@ -9,31 +9,6 @@ StateManager& StateManager::getInstance() {
 	return instance;
 }
 
-bool StateManager::getGLFWInitialized() {
-	return isGLFWInitialized;
-}
-
-void StateManager::bindVertexBuffer(GLenum type, GLuint vertexBufferID) {
-	if (vertexBufferID != vertexBufferCache) {
-		glBindBuffer(type, vertexBufferID);
-		vertexBufferCache = vertexBufferID;
-	}
-}
-
-void StateManager::bindVertexArray(GLuint vertexArrayID) {
-	if (vertexArrayID != vertexArrayCache) {
-		glBindVertexArray(vertexArrayID);
-		vertexArrayCache = vertexArrayID;
-	}
-}
-
-void StateManager::bindShader(GLuint shaderProgramID) {
-	if (shaderProgramID != shaderProgramCache) {
-		glUseProgram(shaderProgramID);
-		shaderProgramCache = shaderProgramID;
-	}
-}
-
 void StateManager::initGLFW() {
 	Logger logger("StateManager");
 	if (!glfwInit()) {
@@ -44,7 +19,7 @@ void StateManager::initGLFW() {
 	isGLFWInitialized = true;
 }
 
-void StateManager::TerminateGLFW() {
+void StateManager::terminateGLFW() {
 	Logger logger("StateManager");
 	glfwTerminate();
 	logger.log("Terminated GLFW", Logger::LoggerLevel::LOGLEVEL_INFO);

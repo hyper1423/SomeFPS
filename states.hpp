@@ -1,10 +1,7 @@
-// Uhhhhh...
-// I know singletons cause a lot of bad thing, but I had to use this to optimize, sorry.
-#pragma once
+#ifndef STATES_HPP
+#define STATES_HPP
 
 #include "include/GL/glew.h"
-
-#include <optional>
 
 class StateManager {
 public:
@@ -16,7 +13,7 @@ public:
 	void bindShader(GLuint shaderProgramID);
 
 	void initGLFW();
-	void TerminateGLFW();
+	void terminateGLFW();
 
 private:
 	StateManager() = default;
@@ -29,3 +26,5 @@ private:
 
 	bool isGLFWInitialized = false;
 };
+
+#endif

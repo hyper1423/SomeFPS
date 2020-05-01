@@ -1,35 +1,49 @@
-#pragma once
-
-#include "logging.hpp"
+#ifndef WINDOW_HPP
+#define WINDOW_HPP
 
 #include "include/GL/glew.h"
 #include "include/GLFW/glfw3.h"
+#include "include/glm/glm.hpp"
+
+#include "logging.hpp"
+#include "bindable.hpp"
+#include "rendering.hpp"
+#include "glfw_constants.hpp"
 
 #include <string>
 #include <memory>
 
-class Window {
+class Window: public IBindable {
 public:
-	Window(unsigned int windowWidth, unsigned int windowHeight, std::string windowTitle, GLFWmonitor* monitor = nullptr, GLFWwindow* shared = nullptr);
+
+	Window(glm::uvec2 windowSize, std::string windowTitle, GLFWmonitor* monitor = nullptr, Window* shared = nullptr);
 	Window(const Window& copyWindow) = delete;
 	Window(Window&& moveWindow);
-	~Window();
 
 	void setClearColor(float r, float g, float b, float a);
-	void initGL();
+	void initialize();
 	void update();
 	void clear();
-	int getKeyAction(int key);
+	KeyAction getKeyAction(Key key);
 	int shouldClose();
 
-	void setFrameBufferSizeCallback(void (* callback)(GLFWwindow*, int, int));
+	void setFrameBufferSizeCallback(GLFWframebuffersizefun callback);
 
-	void use();
+	void bind() override;
 private:
-	GLFWwindow* window = nullptr;
-	unsigned int width = 1024;
-	unsigned int height = 768;
+	struct WindowDestructor {
+		void operator()(GLFWwindow* windowPointer) {
+			glfwDestroyWindow(windowPointer);
+		}
+	};
+
+	std::unique_ptr<GLFWwindow, WindowDestructor> window;
+	const std::unique_ptr<Renderer> renderer;
+	glm::uvec2 size = glm::uvec2(1024, 768);
 	std::string title = "GLFW window";
 	bool isFullScreen = false;
 	Logger logger;
+	static Window* lastBoundCache;
 };
+
+#endif

@@ -1,5 +1,4 @@
 #include "shading.hpp"
-#include "states.hpp"
 #include "logging.hpp"
 
 #include "include/glm/gtc/type_ptr.hpp"
@@ -8,84 +7,94 @@
 #include <string>
 #include <utility>
 
-Shader::Shader() {
+ShaderProgram* ShaderProgram::lastBoundCache = nullptr;
+
+ShaderProgram::ShaderProgram() {
 	ID = glCreateProgram();
 }
 
-Shader::~Shader() {
+ShaderProgram::ShaderProgram(std::map<enumInt, std::string> sourceList) {
+	ID = glCreateProgram();
+	useSource(sourceList);
+}
+
+ShaderProgram::~ShaderProgram() {
 	detach();
 	glDeleteProgram(ID);
 }
 
-Shader& Shader::compile(std::string source, GLenum type) {
+void ShaderProgram::useSource(std::map<enumInt, std::string> sourceList) {
+	for (std::pair<enumInt, std::string> source : sourceList) {
+		compile(source.second, source.first);
+	}
+	link();
+	detach();
+}
+
+void ShaderProgram::compile(std::string source, enumInt type) {
 	const GLchar* arraySource = source.c_str();
 	shaders[type] = glCreateShader(type);
 	glShaderSource(shaders[type], 1, &arraySource, NULL);
 	glCompileShader(shaders[type]);
 	errorCheck(shaders[type], "Compiler", ErrorCheckType::TYPE_SHADER);
-
-	return *this;
 }
 
-Shader& Shader::link() {
-	for (std::pair<GLenum, GLuint> shader : shaders) {
+void ShaderProgram::link() {
+	for (std::pair<enumInt, GLuint> shader : shaders) {
 		glAttachShader(ID, shader.second);
 	}
 
 	glLinkProgram(ID);
 	errorCheck(ID, "Linker", ErrorCheckType::TYPE_PROGRAM);
-
-	return *this;
 }
 
-Shader& Shader::detach() {
+void ShaderProgram::detach() const {
 	for (std::pair<GLenum, GLuint> shader : shaders) {
 		glDetachShader(ID, shader.second);
 		glDeleteShader(shader.second);
 	}
-
-	return *this;
 }
 
-void Shader::SetUniform(std::string name, GLint value) {
-	StateManager::getInstance().bindShader(ID);
+void ShaderProgram::SetUniform(std::string name, int value) const {
 	GLuint uniformLoc = glGetUniformLocation(ID, name.c_str());
-	glUniform1i(uniformLoc, value);
+	glProgramUniform1i(ID, uniformLoc, value);
 }
-void Shader::SetUniform(std::string name, GLfloat value) {
-	StateManager::getInstance().bindShader(ID);
+void ShaderProgram::SetUniform(std::string name, float value) const {
 	GLuint uniformLoc = glGetUniformLocation(ID, name.c_str());
-	glUniform1f(uniformLoc, value);
+	glProgramUniform1f(ID, uniformLoc, value);
 }
-void Shader::SetUniform(std::string name, const glm::vec2& vector) {
-	StateManager::getInstance().bindShader(ID);
+void ShaderProgram::SetUniform(std::string name, const glm::vec2& vector) const {
 	GLuint uniformLoc = glGetUniformLocation(ID, name.c_str());
-	glUniform2fv(uniformLoc, 1, glm::value_ptr(vector));
+	glProgramUniform2fv(ID, uniformLoc, 1, glm::value_ptr(vector));
 }
-void Shader::SetUniform(std::string name, const glm::vec3& vector) {
-	StateManager::getInstance().bindShader(ID);
+void ShaderProgram::SetUniform(std::string name, const glm::vec3& vector) const {
 	GLuint uniformLoc = glGetUniformLocation(ID, name.c_str());
-	glUniform3fv(uniformLoc, 1, glm::value_ptr(vector));
+	glProgramUniform3fv(ID, uniformLoc, 1, glm::value_ptr(vector));
 }
-void Shader::SetUniform(std::string name, const glm::vec4& vector) {
-	StateManager::getInstance().bindShader(ID);
+void ShaderProgram::SetUniform(std::string name, const glm::vec4& vector) const {
 	GLuint uniformLoc = glGetUniformLocation(ID, name.c_str());
-	glUniform4fv(uniformLoc, 1, glm::value_ptr(vector));
+	glProgramUniform4fv(ID, uniformLoc, 1, glm::value_ptr(vector));
 }
-void Shader::SetUniform(std::string name, const glm::mat4& matrix) {
-	StateManager::getInstance().bindShader(ID);
+void ShaderProgram::SetUniform(std::string name, const glm::mat4& matrix) const {
 	GLuint uniformLoc = glGetUniformLocation(ID, name.c_str());
-	glUniformMatrix4fv(uniformLoc, 1, GL_FALSE, glm::value_ptr(matrix));
+	glProgramUniformMatrix4fv(ID, uniformLoc, 1, GL_FALSE, glm::value_ptr(matrix));
 }
 
-GLuint Shader::getID() {
+unsigned int ShaderProgram::getID() {
 	return ID;
 }
 
-void Shader::errorCheck(GLuint objectID, std::string name, Shader::ErrorCheckType type) {
+void ShaderProgram::bind() {
+	if (this != lastBoundCache) {
+		glUseProgram(ID);
+		lastBoundCache = this;
+	}
+}
+
+void ShaderProgram::errorCheck(unsigned int objectID, std::string name, ShaderProgram::ErrorCheckType type) const {
 	Logger logger(name);
-	GLint success;
-	GLint infoLogLength;
+	int success;
+	int infoLogLength;
 	std::string infoLog;
 	switch (type) {
 		case TYPE_SHADER:

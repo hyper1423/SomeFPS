@@ -166,33 +166,6 @@ ErrorHandler.cpp.s:
 	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/ErrorHandler.cpp.s
 .PHONY : ErrorHandler.cpp.s
 
-IRenderable.obj: IRenderable.cpp.obj
-
-.PHONY : IRenderable.obj
-
-# target to build an object file
-IRenderable.cpp.obj:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/IRenderable.cpp.obj
-.PHONY : IRenderable.cpp.obj
-
-IRenderable.i: IRenderable.cpp.i
-
-.PHONY : IRenderable.i
-
-# target to preprocess a source file
-IRenderable.cpp.i:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/IRenderable.cpp.i
-.PHONY : IRenderable.cpp.i
-
-IRenderable.s: IRenderable.cpp.s
-
-.PHONY : IRenderable.s
-
-# target to generate assembly for a file
-IRenderable.cpp.s:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/IRenderable.cpp.s
-.PHONY : IRenderable.cpp.s
-
 Logger.obj: Logger.cpp.obj
 
 .PHONY : Logger.obj
@@ -274,6 +247,33 @@ Renderer.cpp.s:
 	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/Renderer.cpp.s
 .PHONY : Renderer.cpp.s
 
+ResourceLoader.obj: ResourceLoader.cpp.obj
+
+.PHONY : ResourceLoader.obj
+
+# target to build an object file
+ResourceLoader.cpp.obj:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/ResourceLoader.cpp.obj
+.PHONY : ResourceLoader.cpp.obj
+
+ResourceLoader.i: ResourceLoader.cpp.i
+
+.PHONY : ResourceLoader.i
+
+# target to preprocess a source file
+ResourceLoader.cpp.i:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/ResourceLoader.cpp.i
+.PHONY : ResourceLoader.cpp.i
+
+ResourceLoader.s: ResourceLoader.cpp.s
+
+.PHONY : ResourceLoader.s
+
+# target to generate assembly for a file
+ResourceLoader.cpp.s:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/ResourceLoader.cpp.s
+.PHONY : ResourceLoader.cpp.s
+
 Shader.obj: Shader.cpp.obj
 
 .PHONY : Shader.obj
@@ -327,6 +327,33 @@ StateManager.s: StateManager.cpp.s
 StateManager.cpp.s:
 	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/StateManager.cpp.s
 .PHONY : StateManager.cpp.s
+
+Triangle.obj: Triangle.cpp.obj
+
+.PHONY : Triangle.obj
+
+# target to build an object file
+Triangle.cpp.obj:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/Triangle.cpp.obj
+.PHONY : Triangle.cpp.obj
+
+Triangle.i: Triangle.cpp.i
+
+.PHONY : Triangle.i
+
+# target to preprocess a source file
+Triangle.cpp.i:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/Triangle.cpp.i
+.PHONY : Triangle.cpp.i
+
+Triangle.s: Triangle.cpp.s
+
+.PHONY : Triangle.s
+
+# target to generate assembly for a file
+Triangle.cpp.s:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/Triangle.cpp.s
+.PHONY : Triangle.cpp.s
 
 VertexArray.obj: VertexArray.cpp.obj
 
@@ -394,9 +421,6 @@ help:
 	@echo ... ErrorHandler.obj
 	@echo ... ErrorHandler.i
 	@echo ... ErrorHandler.s
-	@echo ... IRenderable.obj
-	@echo ... IRenderable.i
-	@echo ... IRenderable.s
 	@echo ... Logger.obj
 	@echo ... Logger.i
 	@echo ... Logger.s
@@ -406,12 +430,18 @@ help:
 	@echo ... Renderer.obj
 	@echo ... Renderer.i
 	@echo ... Renderer.s
+	@echo ... ResourceLoader.obj
+	@echo ... ResourceLoader.i
+	@echo ... ResourceLoader.s
 	@echo ... Shader.obj
 	@echo ... Shader.i
 	@echo ... Shader.s
 	@echo ... StateManager.obj
 	@echo ... StateManager.i
 	@echo ... StateManager.s
+	@echo ... Triangle.obj
+	@echo ... Triangle.i
+	@echo ... Triangle.s
 	@echo ... VertexArray.obj
 	@echo ... VertexArray.i
 	@echo ... VertexArray.s
