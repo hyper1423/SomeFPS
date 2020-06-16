@@ -19,13 +19,9 @@ const Transform& Triangle::getTransformation() const {
 	});
 }
 
-const VertexArray::TypeElementsArray& Triangle::getElementsArray() const {
-	return VertexArray::TypeElementsArray({
+const VertexArray::TypeIndices& Triangle::getIndices() const {
+	return VertexArray::TypeIndices({
 		{ 0, 1, 2 },
 		{ 0, 2, 3 }
 	});
-}
-
-const ShaderProgram& Triangle::getShaderProgram() const {
-	return defaultShader;
 }

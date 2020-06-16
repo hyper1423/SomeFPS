@@ -3,7 +3,7 @@
 
 #include "window.hpp"
 #include "rendering.hpp"
-#include "resources.hpp"
+#include "resource_loading.hpp"
 #include "states.hpp"
 #include "camera.hpp"
 
@@ -12,7 +12,8 @@
 // Global access point.. I see no way to do it without singleton.
 class Game {
 public:
-	Game& getInstance();
+	static Game& getInstance();
+	ResourceLoader* getResourceLoader();
 	void run();
 private:
 	Game();
@@ -22,9 +23,10 @@ private:
 	void update();
 	void terminate();
 
-	CameraList cameras;
 	std::unique_ptr<Window> window;
-	std::unique_ptr<ResourceLoader> resourceManager;
+	std::unique_ptr<ResourceLoader> resourceLoader;
+
+	static Game instance;
 };
 
 #endif

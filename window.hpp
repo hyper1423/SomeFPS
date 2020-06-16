@@ -1,9 +1,9 @@
 #ifndef WINDOW_HPP
 #define WINDOW_HPP
 
-#include "include/GL/glew.h"
-#include "include/GLFW/glfw3.h"
-#include "include/glm/glm.hpp"
+#include <GL/glew.h>
+#include <glfw/glfw3.h>
+#include <glm/glm.hpp>
 
 #include "logging.hpp"
 #include "bindable.hpp"
@@ -20,11 +20,11 @@ public:
 	Window(const Window& copyWindow) = delete;
 	Window(Window&& moveWindow);
 
-	void setClearColor(float r, float g, float b, float a);
+	void setClearColor(glm::vec4 color);
 	void initialize();
 	void update();
 	void clear();
-	KeyAction getKeyAction(Key key);
+	Constants::KeyAction getKeyAction(Constants::Key key);
 	int shouldClose();
 
 	void setFrameBufferSizeCallback(GLFWframebuffersizefun callback);

@@ -1,9 +1,9 @@
 #ifndef GLFW_CONSTANTS_HPP
 #define GLFW_CONSTANTS_HPP
 
-#include "include/glfw/glfw3.h"
+#include <glfw/glfw3.h>
 
-namespace constants {
+namespace Constants {
 	enum class Key {
 		UNKNOWN = GLFW_KEY_UNKNOWN,
 		SPACE = GLFW_KEY_SPACE,
@@ -134,6 +134,6 @@ namespace constants {
 		PRESS = GLFW_PRESS,
 		REPEAT = GLFW_REPEAT
 	};
-};
+}
 
 #endif

@@ -1,19 +1,12 @@
-#include "resources.hpp"
+#include "resource_loading.hpp"
 #include "defined_types.hpp"
 
 #include <fstream>
 
-ResourceLoader::ResourceLoader() : usedFactory(
-	std::make_shared<TypeResourceFactory>(
-		[](std::vector<std::byte> bytes) -> std::unique_ptr<IResource>&& {
-			throw std::runtime_error("Did not specify factory");
-			__builtin_unreachable();
-		}
-	)
-) { }
+ResourceLoader::ResourceLoader() : usedFactory(nullptr) { }
 
-void ResourceLoader::registerFactory(std::shared_ptr<TypeResourceFactory> factory) {
-	usedFactory = factory;
+void ResourceLoader::registerFactory(const TypeResourceFactory& factory) {
+	usedFactory = &factory;
 }
 
 const IResource& ResourceLoader::load(std::string fileName) {

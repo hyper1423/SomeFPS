@@ -11,12 +11,12 @@ VertexArray::VertexArray() {
 }
 
 void VertexArray::setBufferAttribute(unsigned int elementsNumber, 
-	enumInt type, bool normalize, size_t stride, unsigned int offset) {
+	NumeralTypes::enumInt type, bool normalize, size_t stride, unsigned int offset) {
 	bind();
 	glVertexAttribPointer(VBO, elementsNumber, type, normalize, stride, reinterpret_cast<void*>(offset));
 }
 
-VertexArray& VertexArray::setVBOData(TypeVertices vertices, enumInt usage) {
+VertexArray& VertexArray::setVBOData(TypeVertices vertices, NumeralTypes::enumInt usage) {
 	std::vector<GLfloat> verticesVector;
 	for (TypeVertex& vertex : vertices) {
 		for (GLfloat elements : vertex) {
@@ -42,7 +42,7 @@ VertexArray& VertexArray::setVBOData(TypeVertices vertices, enumInt usage) {
 	return *this;
 }
 
-VertexArray& VertexArray::setIBOData(TypeElementsArray indexes, enumInt usage) {
+VertexArray& VertexArray::setIBOData(TypeIndices indexes, NumeralTypes::enumInt usage) {
 	std::vector<unsigned short> indexesVector;
 	for (std::array<unsigned short, 3>& vertice : indexes) {
 		for (float elements : vertice) {

@@ -25,9 +25,9 @@ void Window::bind() {
 	}
 }
 
-void Window::setClearColor(float r, float g, float b, float a) {
+void Window::setClearColor(glm::vec4 color) {
 	bind();
-	glClearColor(r, g, b, a);
+	glClearColor(color.r, color.g, color.b, color.a);
 }
 
 void Window::initialize() {
@@ -49,8 +49,8 @@ void Window::clear() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
-KeyAction Window::getKeyAction(Key key) {
-	return static_cast<KeyAction>(glfwGetKey(window.get(), static_cast<int>(key)));
+Constants::KeyAction Window::getKeyAction(Constants::Key key) {
+	return static_cast<Constants::KeyAction>(glfwGetKey(window.get(), static_cast<int>(key)));
 }
 
 int Window::shouldClose() {

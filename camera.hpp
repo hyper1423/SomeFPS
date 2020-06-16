@@ -6,7 +6,6 @@
 
 #include <map>
 #include <string>
-#include <typeindex>
 #include <memory>
 
 class Camera: public GameObject, public ITransformable {
@@ -23,9 +22,10 @@ class CameraList: public GameObject {
 public:
     void registerCamera(const Camera& camera);
     void useCamera(std::string name);
-//private:
+    Camera* getActiveCamera();
+private:
     std::map<std::string, std::unique_ptr<Camera>> cameras;
-    Camera& activeCamera;
+    Camera* activeCamera = nullptr;
 };
 
 #endif

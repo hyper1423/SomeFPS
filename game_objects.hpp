@@ -2,7 +2,8 @@
 #define GAME_OBJECTS_HPP
 
 class GameObject {
-    virtual ~GameObject() = 0;
+public:
+    virtual ~GameObject() = default;
 };
 
 #endif

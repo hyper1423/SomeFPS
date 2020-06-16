@@ -70,3 +70,5 @@ Logger& Logger::log(std::string str, Logger::LoggerLevel level) {
 
 	return *this;
 }
+
+Logger constants::gameLogger("SomeFPS");

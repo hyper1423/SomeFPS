@@ -1,19 +1,20 @@
 #include "shading.hpp"
 #include "logging.hpp"
 
-#include "include/glm/gtc/type_ptr.hpp"
+#include <glm/gtc/type_ptr.hpp>
 
 #include <iostream>
 #include <string>
 #include <utility>
 
+ShaderProgram IHasShader::defaultShader;
 ShaderProgram* ShaderProgram::lastBoundCache = nullptr;
 
 ShaderProgram::ShaderProgram() {
 	ID = glCreateProgram();
 }
 
-ShaderProgram::ShaderProgram(std::map<enumInt, std::string> sourceList) {
+ShaderProgram::ShaderProgram(std::map<NumeralTypes::enumInt, std::string> sourceList) {
 	ID = glCreateProgram();
 	useSource(sourceList);
 }
@@ -23,15 +24,15 @@ ShaderProgram::~ShaderProgram() {
 	glDeleteProgram(ID);
 }
 
-void ShaderProgram::useSource(std::map<enumInt, std::string> sourceList) {
-	for (std::pair<enumInt, std::string> source : sourceList) {
+void ShaderProgram::useSource(std::map<NumeralTypes::enumInt, std::string> sourceList) {
+	for (std::pair<NumeralTypes::enumInt, std::string> source : sourceList) {
 		compile(source.second, source.first);
 	}
 	link();
 	detach();
 }
 
-void ShaderProgram::compile(std::string source, enumInt type) {
+void ShaderProgram::compile(std::string source, NumeralTypes::enumInt type) {
 	const GLchar* arraySource = source.c_str();
 	shaders[type] = glCreateShader(type);
 	glShaderSource(shaders[type], 1, &arraySource, NULL);
@@ -40,7 +41,7 @@ void ShaderProgram::compile(std::string source, enumInt type) {
 }
 
 void ShaderProgram::link() {
-	for (std::pair<enumInt, GLuint> shader : shaders) {
+	for (std::pair<NumeralTypes::enumInt, GLuint> shader : shaders) {
 		glAttachShader(ID, shader.second);
 	}
 

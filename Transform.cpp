@@ -10,9 +10,7 @@ Transform::Transform(const glm::mat4& matrix) {
 	scale = getScaleFromMatrix(matrix);
 }
 
-Transform::Transform(const glm::vec3& position = glm::vec3(0.0f, 0.0f, 0.0f), 
-		const glm::quat& orientation = glm::quat(1.0f, 0.0f, 0.0f, 0.0f), 
-		const glm::vec3 size = glm::vec3(1.0f, 1.0f, 1.0f)) {
+Transform::Transform(const glm::vec3& position, const glm::quat& orientation, const glm::vec3 size) {
 	translation = position;
 	rotation = orientation;
 	scale = size;
@@ -54,30 +52,39 @@ Transform::operator glm::mat4() const {
 	return toMatrix();
 }
 
-Transform Transform::operator+(const Transform& other) {
-	return Transform(toMatrix() + other.toMatrix());
+Transform Transform::operator+(const Transform& rhs) {
+	return Transform(toMatrix() + rhs.toMatrix());
 }
 
-Transform Transform::operator-(const Transform& other) {
-	return Transform(toMatrix() - other.toMatrix());
+Transform Transform::operator-(const Transform& rhs) {
+	return Transform(toMatrix() - rhs.toMatrix());
 }
 
-Transform Transform::operator*(const Transform& other) {
-	return Transform(toMatrix() * other.toMatrix());
+Transform Transform::operator*(const Transform& rhs) {
+	return Transform(toMatrix() * rhs.toMatrix());
 }
 
-Transform& Transform::operator+=(const Transform& other) {
-	*this = toMatrix() + other.toMatrix();
+Transform Transform::operator/(const Transform& rhs) {
+	return Transform(toMatrix() * glm::inverse(rhs.toMatrix()));
+}
+
+Transform& Transform::operator+=(const Transform& rhs) {
+	*this = toMatrix() + rhs.toMatrix();
 	return *this;
 }
 
-Transform& Transform::operator-=(const Transform& other) {
-	*this = toMatrix() - other.toMatrix();
+Transform& Transform::operator-=(const Transform& rhs) {
+	*this = toMatrix() - rhs.toMatrix();
 	return *this;
 }
 
-Transform& Transform::operator*=(const Transform& other) {
-	*this = toMatrix() * other.toMatrix();
+Transform& Transform::operator*=(const Transform& rhs) {
+	*this = toMatrix() * rhs.toMatrix();
+	return *this;
+}
+
+Transform& Transform::operator/=(const Transform& rhs) {
+	*this = toMatrix() * glm::inverse(rhs.toMatrix());
 	return *this;
 }
 

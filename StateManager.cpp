@@ -1,7 +1,7 @@
 #include "states.hpp"
 #include "logging.hpp"
 
-#include "include/GLFW/glfw3.h"
+#include <glfw/glfw3.h>
 
 StateManager StateManager::instance;
 

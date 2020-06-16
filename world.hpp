@@ -7,7 +7,6 @@
 #include <tuple>
 #include <typeindex>
 #include <cmath>
-#include <cassert>
 
 class World {
 public:

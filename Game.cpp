@@ -1,11 +1,17 @@
 #include "game.hpp"
 
+Game Game::instance;
+
 Game::Game() {
     init();
 }
 
 Game::~Game() {
 
+}
+
+Game& Game::getInstance() {
+    return instance;
 }
 
 void Game::run() {

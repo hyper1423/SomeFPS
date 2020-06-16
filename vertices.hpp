@@ -4,14 +4,13 @@
 #include "bindable.hpp"
 #include "defined_types.hpp"
 
-#include "include/GL/glew.h"
-#include "include/glm/glm.hpp"
+#include <GL/glew.h>
+#include <glm/glm.hpp>
 
 #include <vector>
 #include <array>
 #include <tuple>
 
-using namespace NumeralTypes;
 class VertexArray: public IBindable {
 public:
 	// Vertex stride settings
@@ -25,7 +24,7 @@ public:
 
 	using TypeVertex = std::array<float, 8>;
 	using TypeVertices = std::vector<TypeVertex>;
-	using TypeElementsArray = std::vector<std::array<unsigned short, 3>>;
+	using TypeIndices = std::vector<std::array<unsigned short, 3>>;
 
 	VertexArray();
 	
@@ -35,8 +34,8 @@ public:
 	 * { Vertex, Normal, TexCoord },
 	 * ...
 	 */
-	VertexArray& setVBOData(TypeVertices vertices, enumInt usage);
-	VertexArray& setIBOData(TypeElementsArray indexes, enumInt usage);
+	VertexArray& setVBOData(TypeVertices vertices, NumeralTypes::enumInt usage);
+	VertexArray& setIBOData(TypeIndices indexes, NumeralTypes::enumInt usage);
 
 	unsigned int getID() const;
 	unsigned int getVBO() const;
@@ -46,7 +45,7 @@ public:
 
 private:
 	void setBufferAttribute(unsigned int elementsNumber, 
-		enumInt type, bool normalize, size_t stride, unsigned int offset);
+		NumeralTypes::enumInt type, bool normalize, size_t stride, unsigned int offset);
 	
 	unsigned int VAO;
 	unsigned int VBO;

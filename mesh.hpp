@@ -4,11 +4,11 @@
 
 class Mesh: public IRenderable {
 public:
-	VertexArray::TypeVertices getVertices() const override;
-	VertexArray::TypeElementsArray getElementsArray() const override;
+	const VertexArray::TypeVertices& getVertices() const override;
+	const VertexArray::TypeIndices& getIndices() const override;
 	Transform getTransformation() const override;
 	ShaderProgram* getShaderProgram() const override;
 private:
 	static VertexArray::TypeVertices vertices;
-	static VertexArray::TypeElementsArray indexes;
+	static VertexArray::TypeIndices indexes;
 };

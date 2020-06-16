@@ -328,32 +328,32 @@ StateManager.cpp.s:
 	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/StateManager.cpp.s
 .PHONY : StateManager.cpp.s
 
-Triangle.obj: Triangle.cpp.obj
+Transform.obj: Transform.cpp.obj
 
-.PHONY : Triangle.obj
+.PHONY : Transform.obj
 
 # target to build an object file
-Triangle.cpp.obj:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/Triangle.cpp.obj
-.PHONY : Triangle.cpp.obj
+Transform.cpp.obj:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/Transform.cpp.obj
+.PHONY : Transform.cpp.obj
 
-Triangle.i: Triangle.cpp.i
+Transform.i: Transform.cpp.i
 
-.PHONY : Triangle.i
+.PHONY : Transform.i
 
 # target to preprocess a source file
-Triangle.cpp.i:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/Triangle.cpp.i
-.PHONY : Triangle.cpp.i
+Transform.cpp.i:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/Transform.cpp.i
+.PHONY : Transform.cpp.i
 
-Triangle.s: Triangle.cpp.s
+Transform.s: Transform.cpp.s
 
-.PHONY : Triangle.s
+.PHONY : Transform.s
 
 # target to generate assembly for a file
-Triangle.cpp.s:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/Triangle.cpp.s
-.PHONY : Triangle.cpp.s
+Transform.cpp.s:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/Transform.cpp.s
+.PHONY : Transform.cpp.s
 
 VertexArray.obj: VertexArray.cpp.obj
 
@@ -439,9 +439,9 @@ help:
 	@echo ... StateManager.obj
 	@echo ... StateManager.i
 	@echo ... StateManager.s
-	@echo ... Triangle.obj
-	@echo ... Triangle.i
-	@echo ... Triangle.s
+	@echo ... Transform.obj
+	@echo ... Transform.i
+	@echo ... Transform.s
 	@echo ... VertexArray.obj
 	@echo ... VertexArray.i
 	@echo ... VertexArray.s

@@ -28,7 +28,7 @@ private:
 };
 
 namespace constants {
-	Logger defaultLogger("SomeFPS");
+	extern Logger gameLogger;
 }
 
 #endif

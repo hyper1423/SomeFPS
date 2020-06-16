@@ -1,9 +1,9 @@
 #ifndef TRANSFORMATION_HPP
 #define TRANSFORMATION_HPP
 
-#include "include/glm/glm.hpp"
-#include "include/glm/gtc/quaternion.hpp"
-#include "include/glm/gtx/matrix_decompose.hpp"
+#include <glm/glm.hpp>
+#include <glm/gtc/quaternion.hpp>
+#include <glm/gtx/matrix_decompose.hpp>
 
 class Transform {
 public:
@@ -23,12 +23,14 @@ public:
 
 	const glm::mat4 toMatrix() const;
 	operator glm::mat4() const;
-	Transform operator+(const Transform& other);
-	Transform operator-(const Transform& other);
-	Transform operator*(const Transform& other);
-	Transform& operator+=(const Transform& other);
-	Transform& operator-=(const Transform& other);
-	Transform& operator*=(const Transform& other);
+	Transform operator+(const Transform& rhs);
+	Transform operator-(const Transform& rhs);
+	Transform operator*(const Transform& rhs);
+	Transform operator/(const Transform& rhs);
+	Transform& operator+=(const Transform& rhs);
+	Transform& operator-=(const Transform& rhs);
+	Transform& operator*=(const Transform& rhs);
+	Transform& operator/=(const Transform& rhs);
 private:
 	glm::vec3 getTranslationFromMatrix(const glm::mat4& matrix) const;
 	glm::quat getRotationFromMatrix(const glm::mat4& matrix) const;
