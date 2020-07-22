@@ -8,6 +8,8 @@
 #include <string>
 #include <vector>
 
+namespace ResourceTypes {
+
 class IResource {
 public:
     virtual ~IResource() = default;
@@ -17,7 +19,6 @@ private:
 	const std::string path;
 };
 
-namespace ResourceTypes {
 // std::string wrapper for resource loader
 class String: public IResource {
 public:
@@ -32,10 +33,7 @@ private:
 class Model: public IResource {
 public:
 	Model() = default;
-	Model(const VertexArray::TypeVertices& verticesArray, const VertexArray::TypeIndices& indicesArray) {
-			vertices = verticesArray;
-			indices = indicesArray;
-		}
+	Model(const VertexArray::TypeVertices& verticesArray, const VertexArray::TypeIndices& indicesArray);
 	VertexArray::TypeVertices& getVertices();
 	VertexArray::TypeIndices& getIndices();
 
@@ -44,12 +42,11 @@ private:
 	VertexArray::TypeIndices indices;
 };
 
-class IImage: public IResource {
+class Image2D: public IResource {
 public:
-	virtual ~IImage() = 0;
-	std::vector<std::vector<glm::vec4>> getData() { return imageData; }
-	glm::vec4 getPixelAt(unsigned int x, unsigned int y);
-	glm::uvec2 getSize() { return imageSize; }
+	std::vector<std::vector<glm::vec4>> getData();
+	glm::vec4 getPixelAt(glm::uvec2 pos);
+	glm::uvec2 getSize();
 
 private:
 	std::vector<std::vector<glm::vec4>> imageData;

@@ -4,6 +4,7 @@ Game Game::instance;
 
 Game::Game() {
     init();
+    logger = Logger("Game");
 }
 
 Game::~Game() {
@@ -17,12 +18,13 @@ Game& Game::getInstance() {
 void Game::run() {
     do {
         update();
+        logger.setLogLevel(Logger::LoggerLevel::LOGLEVEL_INFO).log("Yaa!");
     } while (!window->shouldClose());
     terminate();
 }
 
 void Game::init() {
-    StateManager& gameState = StateManager::getInstance();
+    GLFWManager& gameState = GLFWManager::getInstance();
     gameState.initGLFW();
     window = std::make_unique<Window>(glm::uvec2(1280, 720), "Game");
     window->initialize();
@@ -36,6 +38,6 @@ void Game::update() {
 }
 
 void Game::terminate() {
-    StateManager& gameState = StateManager::getInstance();
+    GLFWManager& gameState = GLFWManager::getInstance();
     gameState.terminateGLFW();
 }

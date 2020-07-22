@@ -1,15 +1,15 @@
-#include "states.hpp"
+#include "glfw_manager.hpp"
 #include "logging.hpp"
 
 #include <glfw/glfw3.h>
 
-StateManager StateManager::instance;
+GLFWManager GLFWManager::instance;
 
-StateManager& StateManager::getInstance() {
+GLFWManager& GLFWManager::getInstance() {
 	return instance;
 }
 
-void StateManager::initGLFW() {
+void GLFWManager::initGLFW() {
 	Logger logger("StateManager");
 	if (!glfwInit()) {
 		logger.log("Initializing failed!", Logger::LoggerLevel::LOGLEVEL_FATAL_ERROR);
@@ -19,7 +19,7 @@ void StateManager::initGLFW() {
 	isGLFWInitialized = true;
 }
 
-void StateManager::terminateGLFW() {
+void GLFWManager::terminateGLFW() {
 	Logger logger("StateManager");
 	glfwTerminate();
 	logger.log("Terminated GLFW", Logger::LoggerLevel::LOGLEVEL_INFO);

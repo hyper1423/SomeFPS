@@ -166,6 +166,87 @@ ErrorHandler.cpp.s:
 	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/ErrorHandler.cpp.s
 .PHONY : ErrorHandler.cpp.s
 
+GLFWManager.obj: GLFWManager.cpp.obj
+
+.PHONY : GLFWManager.obj
+
+# target to build an object file
+GLFWManager.cpp.obj:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/GLFWManager.cpp.obj
+.PHONY : GLFWManager.cpp.obj
+
+GLFWManager.i: GLFWManager.cpp.i
+
+.PHONY : GLFWManager.i
+
+# target to preprocess a source file
+GLFWManager.cpp.i:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/GLFWManager.cpp.i
+.PHONY : GLFWManager.cpp.i
+
+GLFWManager.s: GLFWManager.cpp.s
+
+.PHONY : GLFWManager.s
+
+# target to generate assembly for a file
+GLFWManager.cpp.s:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/GLFWManager.cpp.s
+.PHONY : GLFWManager.cpp.s
+
+Game.obj: Game.cpp.obj
+
+.PHONY : Game.obj
+
+# target to build an object file
+Game.cpp.obj:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/Game.cpp.obj
+.PHONY : Game.cpp.obj
+
+Game.i: Game.cpp.i
+
+.PHONY : Game.i
+
+# target to preprocess a source file
+Game.cpp.i:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/Game.cpp.i
+.PHONY : Game.cpp.i
+
+Game.s: Game.cpp.s
+
+.PHONY : Game.s
+
+# target to generate assembly for a file
+Game.cpp.s:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/Game.cpp.s
+.PHONY : Game.cpp.s
+
+GameTick.obj: GameTick.cpp.obj
+
+.PHONY : GameTick.obj
+
+# target to build an object file
+GameTick.cpp.obj:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/GameTick.cpp.obj
+.PHONY : GameTick.cpp.obj
+
+GameTick.i: GameTick.cpp.i
+
+.PHONY : GameTick.i
+
+# target to preprocess a source file
+GameTick.cpp.i:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/GameTick.cpp.i
+.PHONY : GameTick.cpp.i
+
+GameTick.s: GameTick.cpp.s
+
+.PHONY : GameTick.s
+
+# target to generate assembly for a file
+GameTick.cpp.s:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/GameTick.cpp.s
+.PHONY : GameTick.cpp.s
+
 Logger.obj: Logger.cpp.obj
 
 .PHONY : Logger.obj
@@ -220,33 +301,6 @@ Main.cpp.s:
 	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/Main.cpp.s
 .PHONY : Main.cpp.s
 
-Renderer.obj: Renderer.cpp.obj
-
-.PHONY : Renderer.obj
-
-# target to build an object file
-Renderer.cpp.obj:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/Renderer.cpp.obj
-.PHONY : Renderer.cpp.obj
-
-Renderer.i: Renderer.cpp.i
-
-.PHONY : Renderer.i
-
-# target to preprocess a source file
-Renderer.cpp.i:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/Renderer.cpp.i
-.PHONY : Renderer.cpp.i
-
-Renderer.s: Renderer.cpp.s
-
-.PHONY : Renderer.s
-
-# target to generate assembly for a file
-Renderer.cpp.s:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/Renderer.cpp.s
-.PHONY : Renderer.cpp.s
-
 ResourceLoader.obj: ResourceLoader.cpp.obj
 
 .PHONY : ResourceLoader.obj
@@ -300,33 +354,6 @@ Shader.s: Shader.cpp.s
 Shader.cpp.s:
 	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/Shader.cpp.s
 .PHONY : Shader.cpp.s
-
-StateManager.obj: StateManager.cpp.obj
-
-.PHONY : StateManager.obj
-
-# target to build an object file
-StateManager.cpp.obj:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/StateManager.cpp.obj
-.PHONY : StateManager.cpp.obj
-
-StateManager.i: StateManager.cpp.i
-
-.PHONY : StateManager.i
-
-# target to preprocess a source file
-StateManager.cpp.i:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/StateManager.cpp.i
-.PHONY : StateManager.cpp.i
-
-StateManager.s: StateManager.cpp.s
-
-.PHONY : StateManager.s
-
-# target to generate assembly for a file
-StateManager.cpp.s:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/StateManager.cpp.s
-.PHONY : StateManager.cpp.s
 
 Transform.obj: Transform.cpp.obj
 
@@ -409,6 +436,33 @@ Window.cpp.s:
 	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/Window.cpp.s
 .PHONY : Window.cpp.s
 
+resources_impl.obj: resources_impl.cpp.obj
+
+.PHONY : resources_impl.obj
+
+# target to build an object file
+resources_impl.cpp.obj:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/resources_impl.cpp.obj
+.PHONY : resources_impl.cpp.obj
+
+resources_impl.i: resources_impl.cpp.i
+
+.PHONY : resources_impl.i
+
+# target to preprocess a source file
+resources_impl.cpp.i:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/resources_impl.cpp.i
+.PHONY : resources_impl.cpp.i
+
+resources_impl.s: resources_impl.cpp.s
+
+.PHONY : resources_impl.s
+
+# target to generate assembly for a file
+resources_impl.cpp.s:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/resources_impl.cpp.s
+.PHONY : resources_impl.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -421,24 +475,27 @@ help:
 	@echo ... ErrorHandler.obj
 	@echo ... ErrorHandler.i
 	@echo ... ErrorHandler.s
+	@echo ... GLFWManager.obj
+	@echo ... GLFWManager.i
+	@echo ... GLFWManager.s
+	@echo ... Game.obj
+	@echo ... Game.i
+	@echo ... Game.s
+	@echo ... GameTick.obj
+	@echo ... GameTick.i
+	@echo ... GameTick.s
 	@echo ... Logger.obj
 	@echo ... Logger.i
 	@echo ... Logger.s
 	@echo ... Main.obj
 	@echo ... Main.i
 	@echo ... Main.s
-	@echo ... Renderer.obj
-	@echo ... Renderer.i
-	@echo ... Renderer.s
 	@echo ... ResourceLoader.obj
 	@echo ... ResourceLoader.i
 	@echo ... ResourceLoader.s
 	@echo ... Shader.obj
 	@echo ... Shader.i
 	@echo ... Shader.s
-	@echo ... StateManager.obj
-	@echo ... StateManager.i
-	@echo ... StateManager.s
 	@echo ... Transform.obj
 	@echo ... Transform.i
 	@echo ... Transform.s
@@ -448,6 +505,9 @@ help:
 	@echo ... Window.obj
 	@echo ... Window.i
 	@echo ... Window.s
+	@echo ... resources_impl.obj
+	@echo ... resources_impl.i
+	@echo ... resources_impl.s
 .PHONY : help
 
 

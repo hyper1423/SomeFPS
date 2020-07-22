@@ -1,1 +1,0 @@
-#include "include_guard_begin"

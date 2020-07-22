@@ -4,8 +4,9 @@
 #include "window.hpp"
 #include "rendering.hpp"
 #include "resource_loading.hpp"
-#include "states.hpp"
+#include "glfw_manager.hpp"
 #include "camera.hpp"
+#include "timer.hpp"
 
 #include <vector>
 
@@ -25,6 +26,9 @@ private:
 
 	std::unique_ptr<Window> window;
 	std::unique_ptr<ResourceLoader> resourceLoader;
+	std::unique_ptr<GameTicker> gameTicker;
+
+	Logger logger = Logger("Game");
 
 	static Game instance;
 };

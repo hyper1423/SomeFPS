@@ -11,12 +11,12 @@
 
 class ResourceLoader {
 public:
-	using TypeResourceFactory = std::function<std::unique_ptr<IResource>&&(std::vector<std::byte>)>;
+	using TypeResourceFactory = std::function<std::unique_ptr<ResourceTypes::IResource>&&(std::vector<std::byte>)>;
 	ResourceLoader();
 
 	void registerFactory(const TypeResourceFactory& factory);
-	const IResource& load(std::string fileName);
-	const IResource& reload(std::string fileName);
+	const ResourceTypes::IResource& load(std::string fileName);
+	const ResourceTypes::IResource& reload(std::string fileName);
 	void unload(std::string fileName);
 	void clear();
 
@@ -24,7 +24,7 @@ private:
 	void loadFromFile(std::string fileName);
 
 	const TypeResourceFactory* usedFactory;
-	std::map<std::string, std::unique_ptr<IResource>> resources;
+	std::map<std::string, std::unique_ptr<ResourceTypes::IResource>> resources;
 };
 
 #endif

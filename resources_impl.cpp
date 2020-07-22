@@ -20,17 +20,8 @@ Model::Model(const VertexArray::TypeVertices& verticesArray, const VertexArray::
 	indices = indicesArray;
 }
 
-class IImage: public IResource {
-public:
-	virtual ~IImage() = 0;
-	std::vector<std::byte> getData() { return imageData; }
-	glm::uvec2 getSize() { return imageSize; }
-
-private:
-	std::vector<std::byte> imageData;
-	glm::uvec2 imageSize;
-};
+std::vector<std::vector<glm::vec4>> Image2D::getData() { return imageData; }
+glm::vec4 Image2D::getPixelAt(glm::uvec2 pos) { return imageData[pos.x][pos.y]; }
+glm::uvec2 Image2D::getSize() { return imageSize; }
 
 }
-
-#endif

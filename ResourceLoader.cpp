@@ -9,14 +9,14 @@ void ResourceLoader::registerFactory(const TypeResourceFactory& factory) {
 	usedFactory = &factory;
 }
 
-const IResource& ResourceLoader::load(std::string fileName) {
+const ResourceTypes::IResource& ResourceLoader::load(std::string fileName) {
 	if (resources.find(fileName) == resources.end()) {
         loadFromFile(fileName);
 	}
 	return *resources[fileName];
 }
 
-const IResource& ResourceLoader::reload(std::string fileName) {
+const ResourceTypes::IResource& ResourceLoader::reload(std::string fileName) {
     loadFromFile(fileName);
 	return *resources[fileName];
 }
@@ -26,7 +26,7 @@ void ResourceLoader::unload(std::string fileName) {
 }
 
 void ResourceLoader::clear() {
-	for (std::pair<const std::string, std::unique_ptr<IResource>>& resource : resources) {
+	for (std::pair<const std::string, std::unique_ptr<ResourceTypes::IResource>>& resource : resources) {
 		unload(resource.first);
 	}
 }

@@ -1,8 +1,10 @@
 CMAKE_MINIMUM_REQUIRED ( VERSION 2.81 )
 
 SET ( SRC_FILES 
-Main.cpp Shader.cpp Logger.cpp ErrorHandler.cpp StateManager.cpp VertexArray.cpp 
-Window.cpp Renderer.cpp ResourceLoader.cpp Transform.cpp)
+    Main.cpp ErrorHandler.cpp Game.cpp GameTick.cpp GLFWManager.cpp Logger.cpp 
+    Renderer.cpp ResourceLoader.cpp resources_impl.cpp Shader.cpp Transform.cpp 
+    VertexArray.cpp Window.cpp)
+#SET ( SRC_FILES Main.cpp )
 SET ( CMAKE_CXX_STANDARD 17 )
 SET ( CMAKE_CXX_STANDARD_REQUIRED ON )
 SET ( CMAKE_BUILD_TYPE Debug )
