@@ -1,13 +1,14 @@
 #ifndef TRIANGLE_HPP
 #define TRIANGLE_HPP
 
-#include "rendering.hpp"
+#include "../renderer/renderer.hpp"
 
 class Triangle: public IRenderable {
 public:
-	const VertexArray::TypeVertices& getVertices() const override;
-	const VertexArray::TypeIndices& getIndices() const override;
-	const Transform& getTransformation() const override;
+	VertexArray::TypeVertices getVertices() const override;
+	VertexArray::TypeIndices getIndices() const override;
+	Transform getTransformation() const override;
+	void bindRenderingResources() const override;
 };
 
 #endif

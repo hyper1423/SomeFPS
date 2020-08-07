@@ -1,14 +1,17 @@
 ### Libraries ###
-include/
-lib/
 *.dll
 
 ### Binaries ###
 x64/
 Debug/
-CMakeFiles/
+bin/
 *.o
 *.exe
+
+### CMake files ###
+CMakeFiles/
+cmake_install.cmake
+CMakeCache.txt
 
 ### Miscellaneous ###
 .vscode/

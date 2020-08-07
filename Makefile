@@ -139,141 +139,6 @@ someFPS/fast:
 	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/build
 .PHONY : someFPS/fast
 
-ErrorHandler.obj: ErrorHandler.cpp.obj
-
-.PHONY : ErrorHandler.obj
-
-# target to build an object file
-ErrorHandler.cpp.obj:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/ErrorHandler.cpp.obj
-.PHONY : ErrorHandler.cpp.obj
-
-ErrorHandler.i: ErrorHandler.cpp.i
-
-.PHONY : ErrorHandler.i
-
-# target to preprocess a source file
-ErrorHandler.cpp.i:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/ErrorHandler.cpp.i
-.PHONY : ErrorHandler.cpp.i
-
-ErrorHandler.s: ErrorHandler.cpp.s
-
-.PHONY : ErrorHandler.s
-
-# target to generate assembly for a file
-ErrorHandler.cpp.s:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/ErrorHandler.cpp.s
-.PHONY : ErrorHandler.cpp.s
-
-GLFWManager.obj: GLFWManager.cpp.obj
-
-.PHONY : GLFWManager.obj
-
-# target to build an object file
-GLFWManager.cpp.obj:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/GLFWManager.cpp.obj
-.PHONY : GLFWManager.cpp.obj
-
-GLFWManager.i: GLFWManager.cpp.i
-
-.PHONY : GLFWManager.i
-
-# target to preprocess a source file
-GLFWManager.cpp.i:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/GLFWManager.cpp.i
-.PHONY : GLFWManager.cpp.i
-
-GLFWManager.s: GLFWManager.cpp.s
-
-.PHONY : GLFWManager.s
-
-# target to generate assembly for a file
-GLFWManager.cpp.s:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/GLFWManager.cpp.s
-.PHONY : GLFWManager.cpp.s
-
-Game.obj: Game.cpp.obj
-
-.PHONY : Game.obj
-
-# target to build an object file
-Game.cpp.obj:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/Game.cpp.obj
-.PHONY : Game.cpp.obj
-
-Game.i: Game.cpp.i
-
-.PHONY : Game.i
-
-# target to preprocess a source file
-Game.cpp.i:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/Game.cpp.i
-.PHONY : Game.cpp.i
-
-Game.s: Game.cpp.s
-
-.PHONY : Game.s
-
-# target to generate assembly for a file
-Game.cpp.s:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/Game.cpp.s
-.PHONY : Game.cpp.s
-
-GameTick.obj: GameTick.cpp.obj
-
-.PHONY : GameTick.obj
-
-# target to build an object file
-GameTick.cpp.obj:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/GameTick.cpp.obj
-.PHONY : GameTick.cpp.obj
-
-GameTick.i: GameTick.cpp.i
-
-.PHONY : GameTick.i
-
-# target to preprocess a source file
-GameTick.cpp.i:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/GameTick.cpp.i
-.PHONY : GameTick.cpp.i
-
-GameTick.s: GameTick.cpp.s
-
-.PHONY : GameTick.s
-
-# target to generate assembly for a file
-GameTick.cpp.s:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/GameTick.cpp.s
-.PHONY : GameTick.cpp.s
-
-Logger.obj: Logger.cpp.obj
-
-.PHONY : Logger.obj
-
-# target to build an object file
-Logger.cpp.obj:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/Logger.cpp.obj
-.PHONY : Logger.cpp.obj
-
-Logger.i: Logger.cpp.i
-
-.PHONY : Logger.i
-
-# target to preprocess a source file
-Logger.cpp.i:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/Logger.cpp.i
-.PHONY : Logger.cpp.i
-
-Logger.s: Logger.cpp.s
-
-.PHONY : Logger.s
-
-# target to generate assembly for a file
-Logger.cpp.s:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/Logger.cpp.s
-.PHONY : Logger.cpp.s
-
 Main.obj: Main.cpp.obj
 
 .PHONY : Main.obj
@@ -301,167 +166,464 @@ Main.cpp.s:
 	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/Main.cpp.s
 .PHONY : Main.cpp.s
 
-ResourceLoader.obj: ResourceLoader.cpp.obj
+callbacks/ErrorCallback.obj: callbacks/ErrorCallback.cpp.obj
 
-.PHONY : ResourceLoader.obj
-
-# target to build an object file
-ResourceLoader.cpp.obj:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/ResourceLoader.cpp.obj
-.PHONY : ResourceLoader.cpp.obj
-
-ResourceLoader.i: ResourceLoader.cpp.i
-
-.PHONY : ResourceLoader.i
-
-# target to preprocess a source file
-ResourceLoader.cpp.i:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/ResourceLoader.cpp.i
-.PHONY : ResourceLoader.cpp.i
-
-ResourceLoader.s: ResourceLoader.cpp.s
-
-.PHONY : ResourceLoader.s
-
-# target to generate assembly for a file
-ResourceLoader.cpp.s:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/ResourceLoader.cpp.s
-.PHONY : ResourceLoader.cpp.s
-
-Shader.obj: Shader.cpp.obj
-
-.PHONY : Shader.obj
+.PHONY : callbacks/ErrorCallback.obj
 
 # target to build an object file
-Shader.cpp.obj:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/Shader.cpp.obj
-.PHONY : Shader.cpp.obj
+callbacks/ErrorCallback.cpp.obj:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/callbacks/ErrorCallback.cpp.obj
+.PHONY : callbacks/ErrorCallback.cpp.obj
 
-Shader.i: Shader.cpp.i
+callbacks/ErrorCallback.i: callbacks/ErrorCallback.cpp.i
 
-.PHONY : Shader.i
+.PHONY : callbacks/ErrorCallback.i
 
 # target to preprocess a source file
-Shader.cpp.i:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/Shader.cpp.i
-.PHONY : Shader.cpp.i
+callbacks/ErrorCallback.cpp.i:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/callbacks/ErrorCallback.cpp.i
+.PHONY : callbacks/ErrorCallback.cpp.i
 
-Shader.s: Shader.cpp.s
+callbacks/ErrorCallback.s: callbacks/ErrorCallback.cpp.s
 
-.PHONY : Shader.s
+.PHONY : callbacks/ErrorCallback.s
 
 # target to generate assembly for a file
-Shader.cpp.s:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/Shader.cpp.s
-.PHONY : Shader.cpp.s
+callbacks/ErrorCallback.cpp.s:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/callbacks/ErrorCallback.cpp.s
+.PHONY : callbacks/ErrorCallback.cpp.s
 
-Transform.obj: Transform.cpp.obj
+game/GLFWManager.obj: game/GLFWManager.cpp.obj
 
-.PHONY : Transform.obj
+.PHONY : game/GLFWManager.obj
 
 # target to build an object file
-Transform.cpp.obj:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/Transform.cpp.obj
-.PHONY : Transform.cpp.obj
+game/GLFWManager.cpp.obj:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/game/GLFWManager.cpp.obj
+.PHONY : game/GLFWManager.cpp.obj
 
-Transform.i: Transform.cpp.i
+game/GLFWManager.i: game/GLFWManager.cpp.i
 
-.PHONY : Transform.i
+.PHONY : game/GLFWManager.i
 
 # target to preprocess a source file
-Transform.cpp.i:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/Transform.cpp.i
-.PHONY : Transform.cpp.i
+game/GLFWManager.cpp.i:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/game/GLFWManager.cpp.i
+.PHONY : game/GLFWManager.cpp.i
 
-Transform.s: Transform.cpp.s
+game/GLFWManager.s: game/GLFWManager.cpp.s
 
-.PHONY : Transform.s
+.PHONY : game/GLFWManager.s
 
 # target to generate assembly for a file
-Transform.cpp.s:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/Transform.cpp.s
-.PHONY : Transform.cpp.s
+game/GLFWManager.cpp.s:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/game/GLFWManager.cpp.s
+.PHONY : game/GLFWManager.cpp.s
 
-VertexArray.obj: VertexArray.cpp.obj
+game/Game.obj: game/Game.cpp.obj
 
-.PHONY : VertexArray.obj
+.PHONY : game/Game.obj
 
 # target to build an object file
-VertexArray.cpp.obj:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/VertexArray.cpp.obj
-.PHONY : VertexArray.cpp.obj
+game/Game.cpp.obj:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/game/Game.cpp.obj
+.PHONY : game/Game.cpp.obj
 
-VertexArray.i: VertexArray.cpp.i
+game/Game.i: game/Game.cpp.i
 
-.PHONY : VertexArray.i
+.PHONY : game/Game.i
 
 # target to preprocess a source file
-VertexArray.cpp.i:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/VertexArray.cpp.i
-.PHONY : VertexArray.cpp.i
+game/Game.cpp.i:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/game/Game.cpp.i
+.PHONY : game/Game.cpp.i
 
-VertexArray.s: VertexArray.cpp.s
+game/Game.s: game/Game.cpp.s
 
-.PHONY : VertexArray.s
+.PHONY : game/Game.s
 
 # target to generate assembly for a file
-VertexArray.cpp.s:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/VertexArray.cpp.s
-.PHONY : VertexArray.cpp.s
+game/Game.cpp.s:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/game/Game.cpp.s
+.PHONY : game/Game.cpp.s
 
-Window.obj: Window.cpp.obj
+game/game_objects/GameObject.obj: game/game_objects/GameObject.cpp.obj
 
-.PHONY : Window.obj
+.PHONY : game/game_objects/GameObject.obj
 
 # target to build an object file
-Window.cpp.obj:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/Window.cpp.obj
-.PHONY : Window.cpp.obj
+game/game_objects/GameObject.cpp.obj:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/game/game_objects/GameObject.cpp.obj
+.PHONY : game/game_objects/GameObject.cpp.obj
 
-Window.i: Window.cpp.i
+game/game_objects/GameObject.i: game/game_objects/GameObject.cpp.i
 
-.PHONY : Window.i
+.PHONY : game/game_objects/GameObject.i
 
 # target to preprocess a source file
-Window.cpp.i:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/Window.cpp.i
-.PHONY : Window.cpp.i
+game/game_objects/GameObject.cpp.i:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/game/game_objects/GameObject.cpp.i
+.PHONY : game/game_objects/GameObject.cpp.i
 
-Window.s: Window.cpp.s
+game/game_objects/GameObject.s: game/game_objects/GameObject.cpp.s
 
-.PHONY : Window.s
+.PHONY : game/game_objects/GameObject.s
 
 # target to generate assembly for a file
-Window.cpp.s:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/Window.cpp.s
-.PHONY : Window.cpp.s
+game/game_objects/GameObject.cpp.s:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/game/game_objects/GameObject.cpp.s
+.PHONY : game/game_objects/GameObject.cpp.s
 
-resources_impl.obj: resources_impl.cpp.obj
+game/ticking/GameTicker.obj: game/ticking/GameTicker.cpp.obj
 
-.PHONY : resources_impl.obj
+.PHONY : game/ticking/GameTicker.obj
 
 # target to build an object file
-resources_impl.cpp.obj:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/resources_impl.cpp.obj
-.PHONY : resources_impl.cpp.obj
+game/ticking/GameTicker.cpp.obj:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/game/ticking/GameTicker.cpp.obj
+.PHONY : game/ticking/GameTicker.cpp.obj
 
-resources_impl.i: resources_impl.cpp.i
+game/ticking/GameTicker.i: game/ticking/GameTicker.cpp.i
 
-.PHONY : resources_impl.i
+.PHONY : game/ticking/GameTicker.i
 
 # target to preprocess a source file
-resources_impl.cpp.i:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/resources_impl.cpp.i
-.PHONY : resources_impl.cpp.i
+game/ticking/GameTicker.cpp.i:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/game/ticking/GameTicker.cpp.i
+.PHONY : game/ticking/GameTicker.cpp.i
 
-resources_impl.s: resources_impl.cpp.s
+game/ticking/GameTicker.s: game/ticking/GameTicker.cpp.s
 
-.PHONY : resources_impl.s
+.PHONY : game/ticking/GameTicker.s
 
 # target to generate assembly for a file
-resources_impl.cpp.s:
-	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/resources_impl.cpp.s
-.PHONY : resources_impl.cpp.s
+game/ticking/GameTicker.cpp.s:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/game/ticking/GameTicker.cpp.s
+.PHONY : game/ticking/GameTicker.cpp.s
+
+logger/Logger.obj: logger/Logger.cpp.obj
+
+.PHONY : logger/Logger.obj
+
+# target to build an object file
+logger/Logger.cpp.obj:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/logger/Logger.cpp.obj
+.PHONY : logger/Logger.cpp.obj
+
+logger/Logger.i: logger/Logger.cpp.i
+
+.PHONY : logger/Logger.i
+
+# target to preprocess a source file
+logger/Logger.cpp.i:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/logger/Logger.cpp.i
+.PHONY : logger/Logger.cpp.i
+
+logger/Logger.s: logger/Logger.cpp.s
+
+.PHONY : logger/Logger.s
+
+# target to generate assembly for a file
+logger/Logger.cpp.s:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/logger/Logger.cpp.s
+.PHONY : logger/Logger.cpp.s
+
+renderer/Renderer.obj: renderer/Renderer.cpp.obj
+
+.PHONY : renderer/Renderer.obj
+
+# target to build an object file
+renderer/Renderer.cpp.obj:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/renderer/Renderer.cpp.obj
+.PHONY : renderer/Renderer.cpp.obj
+
+renderer/Renderer.i: renderer/Renderer.cpp.i
+
+.PHONY : renderer/Renderer.i
+
+# target to preprocess a source file
+renderer/Renderer.cpp.i:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/renderer/Renderer.cpp.i
+.PHONY : renderer/Renderer.cpp.i
+
+renderer/Renderer.s: renderer/Renderer.cpp.s
+
+.PHONY : renderer/Renderer.s
+
+# target to generate assembly for a file
+renderer/Renderer.cpp.s:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/renderer/Renderer.cpp.s
+.PHONY : renderer/Renderer.cpp.s
+
+renderer/model/Mesh.obj: renderer/model/Mesh.cpp.obj
+
+.PHONY : renderer/model/Mesh.obj
+
+# target to build an object file
+renderer/model/Mesh.cpp.obj:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/renderer/model/Mesh.cpp.obj
+.PHONY : renderer/model/Mesh.cpp.obj
+
+renderer/model/Mesh.i: renderer/model/Mesh.cpp.i
+
+.PHONY : renderer/model/Mesh.i
+
+# target to preprocess a source file
+renderer/model/Mesh.cpp.i:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/renderer/model/Mesh.cpp.i
+.PHONY : renderer/model/Mesh.cpp.i
+
+renderer/model/Mesh.s: renderer/model/Mesh.cpp.s
+
+.PHONY : renderer/model/Mesh.s
+
+# target to generate assembly for a file
+renderer/model/Mesh.cpp.s:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/renderer/model/Mesh.cpp.s
+.PHONY : renderer/model/Mesh.cpp.s
+
+renderer/model/Model.obj: renderer/model/Model.cpp.obj
+
+.PHONY : renderer/model/Model.obj
+
+# target to build an object file
+renderer/model/Model.cpp.obj:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/renderer/model/Model.cpp.obj
+.PHONY : renderer/model/Model.cpp.obj
+
+renderer/model/Model.i: renderer/model/Model.cpp.i
+
+.PHONY : renderer/model/Model.i
+
+# target to preprocess a source file
+renderer/model/Model.cpp.i:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/renderer/model/Model.cpp.i
+.PHONY : renderer/model/Model.cpp.i
+
+renderer/model/Model.s: renderer/model/Model.cpp.s
+
+.PHONY : renderer/model/Model.s
+
+# target to generate assembly for a file
+renderer/model/Model.cpp.s:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/renderer/model/Model.cpp.s
+.PHONY : renderer/model/Model.cpp.s
+
+renderer/resources/shader/ShaderProgram.obj: renderer/resources/shader/ShaderProgram.cpp.obj
+
+.PHONY : renderer/resources/shader/ShaderProgram.obj
+
+# target to build an object file
+renderer/resources/shader/ShaderProgram.cpp.obj:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/renderer/resources/shader/ShaderProgram.cpp.obj
+.PHONY : renderer/resources/shader/ShaderProgram.cpp.obj
+
+renderer/resources/shader/ShaderProgram.i: renderer/resources/shader/ShaderProgram.cpp.i
+
+.PHONY : renderer/resources/shader/ShaderProgram.i
+
+# target to preprocess a source file
+renderer/resources/shader/ShaderProgram.cpp.i:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/renderer/resources/shader/ShaderProgram.cpp.i
+.PHONY : renderer/resources/shader/ShaderProgram.cpp.i
+
+renderer/resources/shader/ShaderProgram.s: renderer/resources/shader/ShaderProgram.cpp.s
+
+.PHONY : renderer/resources/shader/ShaderProgram.s
+
+# target to generate assembly for a file
+renderer/resources/shader/ShaderProgram.cpp.s:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/renderer/resources/shader/ShaderProgram.cpp.s
+.PHONY : renderer/resources/shader/ShaderProgram.cpp.s
+
+renderer/transformation/Transform.obj: renderer/transformation/Transform.cpp.obj
+
+.PHONY : renderer/transformation/Transform.obj
+
+# target to build an object file
+renderer/transformation/Transform.cpp.obj:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/renderer/transformation/Transform.cpp.obj
+.PHONY : renderer/transformation/Transform.cpp.obj
+
+renderer/transformation/Transform.i: renderer/transformation/Transform.cpp.i
+
+.PHONY : renderer/transformation/Transform.i
+
+# target to preprocess a source file
+renderer/transformation/Transform.cpp.i:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/renderer/transformation/Transform.cpp.i
+.PHONY : renderer/transformation/Transform.cpp.i
+
+renderer/transformation/Transform.s: renderer/transformation/Transform.cpp.s
+
+.PHONY : renderer/transformation/Transform.s
+
+# target to generate assembly for a file
+renderer/transformation/Transform.cpp.s:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/renderer/transformation/Transform.cpp.s
+.PHONY : renderer/transformation/Transform.cpp.s
+
+renderer/vertex_array/VertexArray.obj: renderer/vertex_array/VertexArray.cpp.obj
+
+.PHONY : renderer/vertex_array/VertexArray.obj
+
+# target to build an object file
+renderer/vertex_array/VertexArray.cpp.obj:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/renderer/vertex_array/VertexArray.cpp.obj
+.PHONY : renderer/vertex_array/VertexArray.cpp.obj
+
+renderer/vertex_array/VertexArray.i: renderer/vertex_array/VertexArray.cpp.i
+
+.PHONY : renderer/vertex_array/VertexArray.i
+
+# target to preprocess a source file
+renderer/vertex_array/VertexArray.cpp.i:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/renderer/vertex_array/VertexArray.cpp.i
+.PHONY : renderer/vertex_array/VertexArray.cpp.i
+
+renderer/vertex_array/VertexArray.s: renderer/vertex_array/VertexArray.cpp.s
+
+.PHONY : renderer/vertex_array/VertexArray.s
+
+# target to generate assembly for a file
+renderer/vertex_array/VertexArray.cpp.s:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/renderer/vertex_array/VertexArray.cpp.s
+.PHONY : renderer/vertex_array/VertexArray.cpp.s
+
+resources/ResourceImpl.obj: resources/ResourceImpl.cpp.obj
+
+.PHONY : resources/ResourceImpl.obj
+
+# target to build an object file
+resources/ResourceImpl.cpp.obj:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/resources/ResourceImpl.cpp.obj
+.PHONY : resources/ResourceImpl.cpp.obj
+
+resources/ResourceImpl.i: resources/ResourceImpl.cpp.i
+
+.PHONY : resources/ResourceImpl.i
+
+# target to preprocess a source file
+resources/ResourceImpl.cpp.i:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/resources/ResourceImpl.cpp.i
+.PHONY : resources/ResourceImpl.cpp.i
+
+resources/ResourceImpl.s: resources/ResourceImpl.cpp.s
+
+.PHONY : resources/ResourceImpl.s
+
+# target to generate assembly for a file
+resources/ResourceImpl.cpp.s:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/resources/ResourceImpl.cpp.s
+.PHONY : resources/ResourceImpl.cpp.s
+
+resources/ResourceLoader.obj: resources/ResourceLoader.cpp.obj
+
+.PHONY : resources/ResourceLoader.obj
+
+# target to build an object file
+resources/ResourceLoader.cpp.obj:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/resources/ResourceLoader.cpp.obj
+.PHONY : resources/ResourceLoader.cpp.obj
+
+resources/ResourceLoader.i: resources/ResourceLoader.cpp.i
+
+.PHONY : resources/ResourceLoader.i
+
+# target to preprocess a source file
+resources/ResourceLoader.cpp.i:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/resources/ResourceLoader.cpp.i
+.PHONY : resources/ResourceLoader.cpp.i
+
+resources/ResourceLoader.s: resources/ResourceLoader.cpp.s
+
+.PHONY : resources/ResourceLoader.s
+
+# target to generate assembly for a file
+resources/ResourceLoader.cpp.s:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/resources/ResourceLoader.cpp.s
+.PHONY : resources/ResourceLoader.cpp.s
+
+resources/factories/OBJLoader.obj: resources/factories/OBJLoader.cpp.obj
+
+.PHONY : resources/factories/OBJLoader.obj
+
+# target to build an object file
+resources/factories/OBJLoader.cpp.obj:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/resources/factories/OBJLoader.cpp.obj
+.PHONY : resources/factories/OBJLoader.cpp.obj
+
+resources/factories/OBJLoader.i: resources/factories/OBJLoader.cpp.i
+
+.PHONY : resources/factories/OBJLoader.i
+
+# target to preprocess a source file
+resources/factories/OBJLoader.cpp.i:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/resources/factories/OBJLoader.cpp.i
+.PHONY : resources/factories/OBJLoader.cpp.i
+
+resources/factories/OBJLoader.s: resources/factories/OBJLoader.cpp.s
+
+.PHONY : resources/factories/OBJLoader.s
+
+# target to generate assembly for a file
+resources/factories/OBJLoader.cpp.s:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/resources/factories/OBJLoader.cpp.s
+.PHONY : resources/factories/OBJLoader.cpp.s
+
+resources/factories/TextLoader.obj: resources/factories/TextLoader.cpp.obj
+
+.PHONY : resources/factories/TextLoader.obj
+
+# target to build an object file
+resources/factories/TextLoader.cpp.obj:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/resources/factories/TextLoader.cpp.obj
+.PHONY : resources/factories/TextLoader.cpp.obj
+
+resources/factories/TextLoader.i: resources/factories/TextLoader.cpp.i
+
+.PHONY : resources/factories/TextLoader.i
+
+# target to preprocess a source file
+resources/factories/TextLoader.cpp.i:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/resources/factories/TextLoader.cpp.i
+.PHONY : resources/factories/TextLoader.cpp.i
+
+resources/factories/TextLoader.s: resources/factories/TextLoader.cpp.s
+
+.PHONY : resources/factories/TextLoader.s
+
+# target to generate assembly for a file
+resources/factories/TextLoader.cpp.s:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/resources/factories/TextLoader.cpp.s
+.PHONY : resources/factories/TextLoader.cpp.s
+
+window/Window.obj: window/Window.cpp.obj
+
+.PHONY : window/Window.obj
+
+# target to build an object file
+window/Window.cpp.obj:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/window/Window.cpp.obj
+.PHONY : window/Window.cpp.obj
+
+window/Window.i: window/Window.cpp.i
+
+.PHONY : window/Window.i
+
+# target to preprocess a source file
+window/Window.cpp.i:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/window/Window.cpp.i
+.PHONY : window/Window.cpp.i
+
+window/Window.s: window/Window.cpp.s
+
+.PHONY : window/Window.s
+
+# target to generate assembly for a file
+window/Window.cpp.s:
+	$(MAKE) -f CMakeFiles\someFPS.dir\build.make CMakeFiles/someFPS.dir/window/Window.cpp.s
+.PHONY : window/Window.cpp.s
 
 # Help Target
 help:
@@ -472,42 +634,60 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... someFPS
-	@echo ... ErrorHandler.obj
-	@echo ... ErrorHandler.i
-	@echo ... ErrorHandler.s
-	@echo ... GLFWManager.obj
-	@echo ... GLFWManager.i
-	@echo ... GLFWManager.s
-	@echo ... Game.obj
-	@echo ... Game.i
-	@echo ... Game.s
-	@echo ... GameTick.obj
-	@echo ... GameTick.i
-	@echo ... GameTick.s
-	@echo ... Logger.obj
-	@echo ... Logger.i
-	@echo ... Logger.s
 	@echo ... Main.obj
 	@echo ... Main.i
 	@echo ... Main.s
-	@echo ... ResourceLoader.obj
-	@echo ... ResourceLoader.i
-	@echo ... ResourceLoader.s
-	@echo ... Shader.obj
-	@echo ... Shader.i
-	@echo ... Shader.s
-	@echo ... Transform.obj
-	@echo ... Transform.i
-	@echo ... Transform.s
-	@echo ... VertexArray.obj
-	@echo ... VertexArray.i
-	@echo ... VertexArray.s
-	@echo ... Window.obj
-	@echo ... Window.i
-	@echo ... Window.s
-	@echo ... resources_impl.obj
-	@echo ... resources_impl.i
-	@echo ... resources_impl.s
+	@echo ... callbacks/ErrorCallback.obj
+	@echo ... callbacks/ErrorCallback.i
+	@echo ... callbacks/ErrorCallback.s
+	@echo ... game/GLFWManager.obj
+	@echo ... game/GLFWManager.i
+	@echo ... game/GLFWManager.s
+	@echo ... game/Game.obj
+	@echo ... game/Game.i
+	@echo ... game/Game.s
+	@echo ... game/game_objects/GameObject.obj
+	@echo ... game/game_objects/GameObject.i
+	@echo ... game/game_objects/GameObject.s
+	@echo ... game/ticking/GameTicker.obj
+	@echo ... game/ticking/GameTicker.i
+	@echo ... game/ticking/GameTicker.s
+	@echo ... logger/Logger.obj
+	@echo ... logger/Logger.i
+	@echo ... logger/Logger.s
+	@echo ... renderer/Renderer.obj
+	@echo ... renderer/Renderer.i
+	@echo ... renderer/Renderer.s
+	@echo ... renderer/model/Mesh.obj
+	@echo ... renderer/model/Mesh.i
+	@echo ... renderer/model/Mesh.s
+	@echo ... renderer/model/Model.obj
+	@echo ... renderer/model/Model.i
+	@echo ... renderer/model/Model.s
+	@echo ... renderer/resources/shader/ShaderProgram.obj
+	@echo ... renderer/resources/shader/ShaderProgram.i
+	@echo ... renderer/resources/shader/ShaderProgram.s
+	@echo ... renderer/transformation/Transform.obj
+	@echo ... renderer/transformation/Transform.i
+	@echo ... renderer/transformation/Transform.s
+	@echo ... renderer/vertex_array/VertexArray.obj
+	@echo ... renderer/vertex_array/VertexArray.i
+	@echo ... renderer/vertex_array/VertexArray.s
+	@echo ... resources/ResourceImpl.obj
+	@echo ... resources/ResourceImpl.i
+	@echo ... resources/ResourceImpl.s
+	@echo ... resources/ResourceLoader.obj
+	@echo ... resources/ResourceLoader.i
+	@echo ... resources/ResourceLoader.s
+	@echo ... resources/factories/OBJLoader.obj
+	@echo ... resources/factories/OBJLoader.i
+	@echo ... resources/factories/OBJLoader.s
+	@echo ... resources/factories/TextLoader.obj
+	@echo ... resources/factories/TextLoader.i
+	@echo ... resources/factories/TextLoader.s
+	@echo ... window/Window.obj
+	@echo ... window/Window.i
+	@echo ... window/Window.s
 .PHONY : help
 
 
