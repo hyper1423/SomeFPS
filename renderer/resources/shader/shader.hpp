@@ -4,6 +4,7 @@
 #include "../bindable.hpp"
 #include "../../../types/defined_types.hpp"
 #include "../../../constants/shader_constants.hpp"
+#include "../../../logger/logger.hpp"
 
 #include <GL/glew.h>
 #include <glm/glm.hpp>
@@ -23,30 +24,33 @@ protected:
 class ShaderProgram: public IBindable {
 public:
 	ShaderProgram();
+	ShaderProgram(const ShaderProgram& copy) = delete;
+	ShaderProgram(ShaderProgram&& move) noexcept;
 	// GLenums in the map mean shader types, strings mean sources.
-	ShaderProgram(std::map<constants::ShaderTypes, std::string> sourceList);
+	ShaderProgram(const std::map<constants::ShaderTypes, std::string>& sourceList);
 	~ShaderProgram();
-	//Shader(const Shader& copy) = delete;
 
 	// GLenums in the map mean shader types, strings mean sources.
-	void useSource(std::map<constants::ShaderTypes, std::string> sourceList);
+	void useSource(const std::map<constants::ShaderTypes, std::string>& sourceList);
 	
-	void SetUniform(std::string name, int value) const;
-	void SetUniform(std::string name, float value) const;
-	void SetUniform(std::string name, const glm::vec2& vector) const;
-	void SetUniform(std::string name, const glm::vec3& vector) const;
-	void SetUniform(std::string name, const glm::vec4& vector) const;
-	void SetUniform(std::string name, const glm::mat4& matrix) const;
+	void setUniform(std::string name, int value) const;
+	void setUniform(std::string name, float value) const;
+	void setUniform(std::string name, const glm::vec2& vector) const;
+	void setUniform(std::string name, const glm::vec3& vector) const;
+	void setUniform(std::string name, const glm::vec4& vector) const;
+	void setUniform(std::string name, const glm::mat4& matrix) const;
 
-	unsigned int getID();
+	unsigned int getID() const;
 
-	void bind();
+	void bind() const override;
 	
 private:
-	enum ErrorCheckType {
+	enum class ErrorCheckType {
 		TYPE_SHADER = 1,
 		TYPE_PROGRAM
 	};
+
+	int getUniformLocation(std::string name) const;
 
 	void compile(std::string source, constants::ShaderTypes type);
 	void link();
@@ -55,7 +59,9 @@ private:
 
 	unsigned int ID;
 	std::map<constants::ShaderTypes, unsigned int> shaders;
-	static ShaderProgram* lastBoundCache;
+	mutable std::map<std::string, int> uniformCache;
+	static const ShaderProgram* lastBoundCache;
+	mutable Logger logger;
 };
 
 #endif

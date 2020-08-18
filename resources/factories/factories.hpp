@@ -10,11 +10,11 @@ namespace factories {
 
 class TextLoader {
 public:
-    resourceTypes::IResource* operator()(std::vector<std::byte> bytes);
+    resourceTypes::Resource* operator()(std::vector<std::byte> bytes);
 };
-class OBJLoader {
+class ModelLoader {
 public:
-    resourceTypes::IResource* operator()(std::vector<std::byte> bytes);
+    resourceTypes::Resource* operator()(std::vector<std::byte> bytes);
 };
 
 }

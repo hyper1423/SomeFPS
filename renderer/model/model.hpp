@@ -9,11 +9,12 @@
 
 class Model {
 public:
-    Model(std::vector<Mesh> meshes);
+    Model(std::vector<Mesh> meshes = std::vector<Mesh>());
 
     VertexArray::TypeVertices getVertices() const;
     VertexArray::TypeIndices getIndices() const;
-    std::vector<std::reference_wrapper<Mesh>> getMeshes() const;
+    std::vector<std::reference_wrapper<Mesh>> getMeshes();
+    std::vector<Mesh> getMeshes() const;
 private:
     std::vector<Mesh> meshes;
 };

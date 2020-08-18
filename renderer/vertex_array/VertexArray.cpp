@@ -1,8 +1,9 @@
 #include "vertex_array.hpp"
+#include "../../logger/logger.hpp"
 
-VertexArray* VertexArray::lastBoundCache = nullptr;
-GLuint VertexArray::VBOLastCache = 0;
-GLuint VertexArray::IBOLastCache = 0;
+const VertexArray* VertexArray::lastBoundCache = nullptr;
+unsigned int VertexArray::VBOLastCache = 0;
+unsigned int VertexArray::IBOLastCache = 0;
 
 VertexArray::VertexArray() {
 	glCreateVertexArrays(1, &VAO);
@@ -17,34 +18,30 @@ void VertexArray::setBufferAttribute(unsigned int elementsNumber,
 }
 
 VertexArray& VertexArray::setVBOData(TypeVertices vertices, numeralTypes::enumInt usage) {
-	std::vector<TypeVertex> verticesVector;
-	for (TypeVertex& vertex : vertices) {
-		verticesVector.push_back(vertex);
-	}
+	glNamedBufferData(VBO, vertices.size() * sizeof(TypeVertex), vertices.data(), usage);
 
-	glNamedBufferData(VBO, verticesVector.size() * sizeof(float), verticesVector.data(), usage);
-
-	glVertexArrayVertexBuffer(VAO, 0, VBO, 0, vertexStride * sizeof(float));
+	glVertexArrayVertexBuffer(VAO, 0, VBO, 0, sizeof(TypeVertex));
 
 	glEnableVertexArrayAttrib(VAO, 0);
 	glEnableVertexArrayAttrib(VAO, 1);
 	glEnableVertexArrayAttrib(VAO, 2);
 
-	glVertexArrayAttribFormat(VAO, 0, vertexPositionSize, GL_FLOAT, GL_FALSE, vertexPositionIndex * sizeof(float));
-	glVertexArrayAttribFormat(VAO, 1, vertexNormalSize, GL_FLOAT, GL_FALSE, vertexNormalIndex * sizeof(float));
-	glVertexArrayAttribFormat(VAO, 2, vertexTexCoordSize, GL_FLOAT, GL_FALSE, vertexTexCoordIndex * sizeof(float));
+	glVertexArrayAttribFormat(VAO, 0, vertexPositionSizeFloat, GL_FLOAT, GL_FALSE, vertexPositionIndexByte);
+	glVertexArrayAttribFormat(VAO, 1, vertexNormalSizeFloat, GL_FLOAT, GL_FALSE, vertexNormalIndexByte);
+	glVertexArrayAttribFormat(VAO, 2, vertexTexCoordSizeFloat, GL_FLOAT, GL_FALSE, vertexTexCoordIndexByte);
 
 	glVertexArrayAttribBinding(VAO, 0, 0);
 	glVertexArrayAttribBinding(VAO, 1, 0);
 	glVertexArrayAttribBinding(VAO, 2, 0);
+
 	return *this;
 }
 
 VertexArray& VertexArray::setIBOData(TypeIndices indexes, numeralTypes::enumInt usage) {
 	std::vector<unsigned short> indicesVector;
-	for (std::array<unsigned short, 3>& vertice : indexes) {
-		for (float elements : vertice) {
-			indicesVector.push_back(elements);
+	for (std::array<unsigned short, 3>& face : indexes) {
+		for (float element : face) {
+			indicesVector.push_back(element);
 		}
 	}
 
@@ -54,19 +51,19 @@ VertexArray& VertexArray::setIBOData(TypeIndices indexes, numeralTypes::enumInt 
 	return *this;
 }
 
-GLuint VertexArray::getID() const {
+unsigned int VertexArray::getID() const {
 	return VAO;
 }
 
-GLuint VertexArray::getVBO() const {
+unsigned int VertexArray::getVBO() const {
 	return VBO;
 }
 
-GLuint VertexArray::getIBO() const {
+unsigned int VertexArray::getIBO() const {
 	return IBO;
 }
 
-void VertexArray::bind() {
+void VertexArray::bind() const {
 	if (this != lastBoundCache) {
 		glBindVertexArray(VAO);
 		lastBoundCache = this;

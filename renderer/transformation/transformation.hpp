@@ -5,12 +5,12 @@
 #include <glm/gtc/quaternion.hpp>
 #include <glm/gtx/matrix_decompose.hpp>
 
-class Transform {
+class Transformation {
 public:
-	Transform(const glm::vec3& position = glm::vec3(0.0f, 0.0f, 0.0f), 
+	Transformation(const glm::vec3& position = glm::vec3(0.0f, 0.0f, 0.0f), 
 		const glm::quat& orientation = glm::quat(1.0f, 0.0f, 0.0f, 0.0f), 
 		const glm::vec3 size = glm::vec3(1.0f, 1.0f, 1.0f));
-	Transform(const glm::mat4& matrix);
+	Transformation(const glm::mat4& matrix);
 
 	glm::vec3 getTranslation() const;
 	glm::quat getRotation() const;
@@ -23,14 +23,14 @@ public:
 
 	const glm::mat4 toMatrix() const;
 	operator glm::mat4() const;
-	Transform operator+(const Transform& rhs);
-	Transform operator-(const Transform& rhs);
-	Transform operator*(const Transform& rhs);
-	Transform operator/(const Transform& rhs);
-	Transform& operator+=(const Transform& rhs);
-	Transform& operator-=(const Transform& rhs);
-	Transform& operator*=(const Transform& rhs);
-	Transform& operator/=(const Transform& rhs);
+	Transformation operator+(const Transformation& rhs);
+	Transformation operator-(const Transformation& rhs);
+	Transformation operator*(const Transformation& rhs);
+	Transformation operator/(const Transformation& rhs);
+	Transformation& operator+=(const Transformation& rhs);
+	Transformation& operator-=(const Transformation& rhs);
+	Transformation& operator*=(const Transformation& rhs);
+	Transformation& operator/=(const Transformation& rhs);
 private:
 	glm::vec3 getTranslationFromMatrix(const glm::mat4& matrix) const;
 	glm::quat getRotationFromMatrix(const glm::mat4& matrix) const;
@@ -43,12 +43,12 @@ private:
 
 class IHasTransformation {
 public:
-	virtual Transform getTransformation() const = 0;
+	virtual Transformation getTransformation() const = 0;
 };
 
 class ITransformable: IHasTransformation {
 public:
-	virtual void setTransformation() = 0;
+	virtual void setTransformation(const Transformation& transformation) = 0;
 };
 
 #endif

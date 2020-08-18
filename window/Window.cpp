@@ -1,6 +1,6 @@
 #include "window.hpp"
 
-Window* Window::lastBoundCache = nullptr;
+const Window* Window::lastBoundCache = nullptr;
 
 Window::Window(glm::uvec2 windowSize, std::string windowTitle, GLFWmonitor* monitor, Window* shared) : 
 	size(windowSize), title(windowTitle), isFullScreen(monitor) {
@@ -11,14 +11,14 @@ Window::Window(glm::uvec2 windowSize, std::string windowTitle, GLFWmonitor* moni
 	logger = Logger(title);
 }
 
-Window::Window(Window&& moveWindow) {
+Window::Window(Window&& moveWindow) noexcept {
 	window = std::move(moveWindow.window);
 	size = moveWindow.size;
 	title = moveWindow.title;
 	isFullScreen = moveWindow.isFullScreen;
 }
 
-void Window::bind() {
+void Window::bind() const {
 	if (this != lastBoundCache) {
 		glfwMakeContextCurrent(window.get());
 		lastBoundCache = this;

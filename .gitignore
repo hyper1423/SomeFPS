@@ -2,9 +2,7 @@
 *.dll
 
 ### Binaries ###
-x64/
-Debug/
-bin/
+out/
 *.o
 *.exe
 
@@ -15,3 +13,4 @@ CMakeCache.txt
 
 ### Miscellaneous ###
 .vscode/
+.vs/

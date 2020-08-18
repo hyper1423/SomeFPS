@@ -4,8 +4,8 @@
 #include <functional>
 #include <algorithm>
 
-GameObject::GameObject() {
-    //Game::getInstance().getResourceLoader()->registerFactory();
+GameObject::GameObject(GameObject* parent) {
+    this->parent = parent;
 }
 
 std::string GameObject::getName() {
@@ -63,8 +63,12 @@ GameObject* GameObject::getParent() {
     return parent;
 }
 void GameObject::setParent(GameObject* parent) {
-    this->parent->removeChild(*this);
-    parent->addChild(*this);
+    if (this->parent) {
+        this->parent->removeChild(*this);
+    }
+    if (parent) {
+        parent->addChild(*this);
+    }
     this->parent = parent;
 }
 
@@ -73,6 +77,7 @@ void GameObject::removeChild(GameObject& object) {
         childIter != children.end(); childIter++) {
         if (&childIter->get() == &object) {
             children.erase(childIter);
+            break;
         }
     }
 }

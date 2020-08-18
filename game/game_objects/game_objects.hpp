@@ -9,7 +9,7 @@
 
 class GameObject {
 public:
-    GameObject();
+    GameObject(GameObject* parent = nullptr);
     virtual ~GameObject() = default;
 
     std::string getName();
@@ -26,15 +26,15 @@ public:
     GameObject* getParent();
     void setParent(GameObject* object);
 
-	void removeChild(GameObject& object);
-	void addChild(GameObject& object);
-
-private:
-
+protected:
     std::string name;
     //resourceTypes::Image2D classImage;
     std::vector<std::reference_wrapper<GameObject>> children;
-    GameObject* parent;
+    GameObject* parent = nullptr;
+
+private:
+    void removeChild(GameObject& object);
+    void addChild(GameObject& object);
 };
 
 #endif

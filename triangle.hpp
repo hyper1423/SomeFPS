@@ -7,7 +7,7 @@ class Triangle: public IRenderable {
 public:
 	VertexArray::TypeVertices getVertices() const override;
 	VertexArray::TypeIndices getIndices() const override;
-	Transform getTransformation() const override;
+	Transformation getTransformation() const override;
 	void bindRenderingResources() const override;
 };
 

@@ -2,17 +2,18 @@
 #define RESOURCES_LIST_HPP
 
 #include "../renderer/vertex_array/vertex_array.hpp"
+#include "../renderer/model/model.hpp"
 
-#include "../include/glm/glm.hpp"
+#include <glm/glm.hpp>
 
 #include <string>
 #include <vector>
 
 namespace resourceTypes {
 
-class IResource {
+class Resource {
 public:
-    virtual ~IResource() = default;
+    virtual ~Resource() = default;
 	std::string getPath();
 
 private:
@@ -20,7 +21,7 @@ private:
 };
 
 // std::string wrapper for resource loader
-class ResourceString: public IResource {
+class ResourceString: public Resource {
 public:
 	ResourceString() = default;
 	ResourceString(const std::string& str);
@@ -30,19 +31,17 @@ private:
 	std::string string;
 };
 
-class ResourceMesh: public IResource {
+class ResourceModel: public Resource {
 public:
-	ResourceMesh() = default;
-	ResourceMesh(const VertexArray::TypeVertices& verticesArray, const VertexArray::TypeIndices& indicesArray);
-	VertexArray::TypeVertices& getVertices();
-	VertexArray::TypeIndices& getIndices();
+	ResourceModel() = default;
+	ResourceModel(const Model& model);
+	Model& get();
 
 private:
-	VertexArray::TypeVertices vertices;
-	VertexArray::TypeIndices indices;
+	Model model;
 };
 
-class Image2D: public IResource {
+class Image2D: public Resource {
 public:
 	std::vector<std::vector<glm::vec4>>& data();
 	glm::vec4& pixelAt(glm::uvec2 pos);

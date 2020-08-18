@@ -18,7 +18,7 @@ public:
 
 	Window(glm::uvec2 windowSize, std::string windowTitle, GLFWmonitor* monitor = nullptr, Window* shared = nullptr);
 	Window(const Window& copyWindow) = delete;
-	Window(Window&& moveWindow);
+	Window(Window&& moveWindow) noexcept;
 
 	void setClearColor(glm::vec4 color);
 	void initialize();
@@ -29,7 +29,7 @@ public:
 
 	void setFrameBufferSizeCallback(GLFWframebuffersizefun callback);
 
-	void bind() override;
+	void bind() const override;
 private:
 	struct WindowDestructor {
 		void operator()(GLFWwindow* windowPointer) {
@@ -42,7 +42,7 @@ private:
 	std::string title = "GLFW window";
 	bool isFullScreen = false;
 	Logger logger;
-	static Window* lastBoundCache;
+	static const Window* lastBoundCache;
 };
 
 #endif

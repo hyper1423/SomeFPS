@@ -12,15 +12,15 @@
 
 class ResourceLoader {
 public:
-	using TypeResourceFactory = std::function<resourceTypes::IResource*(std::vector<std::byte>)>;
+	using TypeResourceFactory = std::function<resourceTypes::Resource*(std::vector<std::byte>)>;
 	ResourceLoader();
 
 	template <typename TypeFactory>
-	void registerFactory(TypeFactory factory);
+	void registerFactory(const TypeFactory& factory);
 	// If given file is invalid for currently used factory, it will return nullptr.
-	const resourceTypes::IResource* load(std::string fileName);
+	resourceTypes::Resource* load(std::string fileName);
 	// If given file is invalid for currently used factory, it will return nullptr.
-	const resourceTypes::IResource* reload(std::string fileName);
+	resourceTypes::Resource* reload(std::string fileName);
 	void unload(std::string fileName);
 	void clear();
 
@@ -28,7 +28,7 @@ private:
 	void loadFromFile(std::string fileName);
 
 	TypeResourceFactory usedFactory;
-	std::map<std::string, std::unique_ptr<resourceTypes::IResource>> resources;
+	std::map<std::string, std::unique_ptr<resourceTypes::Resource>> resources;
 
 	Logger logger;
 };

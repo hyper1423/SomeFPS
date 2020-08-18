@@ -1,12 +1,22 @@
 #include "mesh.hpp"
 
 Mesh::Mesh(const VertexArray::TypeVertices& vertices, const VertexArray::TypeIndices& indices) {
-    this->vertices = vertices;
-    this->indices = indices;
+    setVertices(vertices);
+    setIndices(indices);
 }
-VertexArray::TypeVertices& Mesh::getVertices() {
+
+const VertexArray::TypeVertices& Mesh::getVertices() const {
     return vertices;
 }
-VertexArray::TypeIndices& Mesh::getIndices() {
+
+const VertexArray::TypeIndices& Mesh::getIndices() const {
     return indices;
+}
+
+void Mesh::setVertices(const VertexArray::TypeVertices& vertices) {
+    this->vertices = vertices;
+}
+
+void Mesh::setIndices(const VertexArray::TypeIndices& indices) {
+    this->indices = indices;
 }

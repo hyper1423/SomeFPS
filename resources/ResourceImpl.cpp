@@ -4,7 +4,7 @@
 
 namespace resourceTypes {
 
-std::string IResource::getPath() {
+std::string Resource::getPath() {
     return path;
 }
 
@@ -15,9 +15,11 @@ std::string& ResourceString::get() {
 	return string;
 }
 
-ResourceMesh::ResourceMesh(const VertexArray::TypeVertices& verticesArray, const VertexArray::TypeIndices& indicesArray) {
-	vertices = verticesArray;
-	indices = indicesArray;
+ResourceModel::ResourceModel(const Model& model) {
+	this->model = model;
+}
+Model& ResourceModel::get() {
+	return model;
 }
 
 std::vector<std::vector<glm::vec4>>& Image2D::data() { return imageData; }

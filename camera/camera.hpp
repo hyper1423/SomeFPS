@@ -10,12 +10,12 @@
 
 class Camera: public GameObject, public ITransformable {
 public:
-    Transform getTransformation() const override;
+    Transformation getTransformation() const override;
     void setTransformation() override;
     std::string getClassName() override;
 
 private:
-    Transform transformation;
+    Transformation transformation;
     unsigned int FOV;
 };
 
