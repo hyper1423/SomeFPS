@@ -45,7 +45,7 @@ void Transformation::setScale(const glm::vec3& scaleValue) {
 }
 
 const glm::mat4 Transformation::toMatrix() const {
-	return glm::mat4_cast(rotation) * glm::scale(glm::mat4(1.0f), scale) * glm::translate(glm::mat4(1.0f), translation);
+	return glm::translate(glm::mat4(1.0f), translation) * glm::mat4_cast(rotation) * glm::scale(glm::mat4(1.0f), scale);
 }
 
 Transformation::operator glm::mat4() const {

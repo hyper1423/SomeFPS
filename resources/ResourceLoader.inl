@@ -1,4 +1,4 @@
-template <typename TypeFactory>
-void ResourceLoader::registerFactory(const TypeFactory& factory) {
-	usedFactory = factory;
+template <typename LoaderStrategy>
+void ResourceLoader::setLoaderStrategy(const LoaderStrategy& factory) {
+	usedLoaderStrategy = factory;
 }

@@ -1,5 +1,5 @@
-#ifndef SHADING_HPP
-#define SHADING_HPP
+#ifndef SHADER_HPP
+#define SHADER_HPP
 
 #include "../bindable.hpp"
 #include "../../../types/defined_types.hpp"
@@ -10,16 +10,6 @@
 #include <glm/glm.hpp>
 
 #include <map>
-
-class ShaderProgram;
-
-class IHasShader {
-public:
-	virtual ~IHasShader() = default;
-	virtual const ShaderProgram& getShaderProgram() const = 0;
-protected:
-	static ShaderProgram defaultShader;
-};
 
 class ShaderProgram: public IBindable {
 public:

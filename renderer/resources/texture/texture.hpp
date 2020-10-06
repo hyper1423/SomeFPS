@@ -1,5 +1,5 @@
-#ifndef TEXTURING_HPP
-#define TEXTURING_HPP
+#ifndef TEXTURE_HPP
+#define TEXTURE_HPP
 
 #include "bindable.hpp"
 #include "resource_loading.hpp"
@@ -15,12 +15,6 @@
 class ITexture: public IBindable {
 public:
 	virtual ~ITexture() = default;
-};
-
-class IHasTexture {
-public:
-	virtual ~IHasTexture() = default;
-	virtual const ITexture& getTexture() const = 0;
 };
 
 class Texture2D: public ITexture {

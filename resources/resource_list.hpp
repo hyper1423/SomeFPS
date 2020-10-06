@@ -1,8 +1,9 @@
-#ifndef RESOURCES_LIST_HPP
-#define RESOURCES_LIST_HPP
+#ifndef RESOURCE_LIST_HPP
+#define RESOURCE_LIST_HPP
 
 #include "../renderer/vertex_array/vertex_array.hpp"
 #include "../renderer/model/model.hpp"
+#include "../renderer/resources/texture/image/image.hpp"
 
 #include <glm/glm.hpp>
 
@@ -11,48 +12,31 @@
 
 namespace resourceTypes {
 
-class Resource {
-public:
+struct Resource {
     virtual ~Resource() = default;
-	std::string getPath();
-
-private:
 	const std::string path;
 };
 
 // std::string wrapper for resource loader
-class ResourceString: public Resource {
-public:
+struct ResourceString: public Resource {
 	ResourceString() = default;
 	ResourceString(const std::string& str);
-	std::string& get();
 
-private:
-	std::string string;
+	std::string resource;
 };
 
-class ResourceModel: public Resource {
-public:
+struct ResourceModel: public Resource {
 	ResourceModel() = default;
 	ResourceModel(const Model& model);
-	Model& get();
 
-private:
-	Model model;
+	Model resource;
 };
 
-class Image2D: public Resource {
-public:
-	std::vector<std::vector<glm::vec4>>& data();
-	glm::vec4& pixelAt(glm::uvec2 pos);
-	glm::uvec2 getSize();
+struct ResourceImage: public Resource {
+	ResourceImage() = default;
+	ResourceImage(const Image& image);
 
-	operator std::vector<std::vector<glm::vec4>>();
-	std::vector<glm::vec4>& operator[](unsigned int index);
-
-private:
-	std::vector<std::vector<glm::vec4>> imageData;
-	glm::uvec2 imageSize;
+	Image resource;
 };
 
 }

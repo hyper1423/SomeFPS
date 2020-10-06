@@ -2,7 +2,7 @@
 #define VERTEX_ARRAY_HPP
 
 #include "../resources/bindable.hpp"
-#include "../types/defined_types.hpp"
+#include "../../types/defined_types.hpp"
 
 #include <GL/glew.h>
 #include <glm/glm.hpp>

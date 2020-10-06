@@ -8,7 +8,7 @@
 
 class Tickable {
 public:
-    virtual void onTick(float dt) = 0;
+    virtual void onTick(double dt) = 0;
 };
 
 class GameTicker {
@@ -19,7 +19,7 @@ public:
     void update();
 private:
 
-    void tick();
+    void updateAll();
     std::vector<std::reference_wrapper<Tickable>> attachedObjects;
 
     const unsigned int tickrate;

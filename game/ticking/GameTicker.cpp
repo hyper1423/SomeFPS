@@ -11,10 +11,10 @@ void GameTicker::update() {
     
 }
 
-void GameTicker::tick() {
-    static unsigned int lastTime = time(nullptr);
+void GameTicker::updateAll() {
+    static std::chrono::time_point lastTime = std::chrono::system_clock::now();
     for (Tickable& object : attachedObjects) {
-        object.onTick(time(nullptr) - lastTime);
-        lastTime = time(nullptr);
+        object.onTick((std::chrono::system_clock::now() - lastTime).count());
+        lastTime = std::chrono::system_clock::now();
     }
 }

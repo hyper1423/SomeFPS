@@ -57,6 +57,8 @@ void Game::init() {
 
     Cube* cube = new Cube;
     cube->setParent(rootObject.get());
+
+    glfwSwapInterval(0);
 }
 
 void Game::update() {
@@ -65,7 +67,7 @@ void Game::update() {
     /*
     ShaderProgram tests;
     std::map<constants::ShaderTypes, std::string> testmap;
-    resourceLoader->registerFactory(factories::TextLoader());
+    resourceLoader->setLoaderStrategy(factories::TextLoader());
     resourceTypes::ResourceString* strPointer1 = reinterpret_cast<resourceTypes::ResourceString*>(
         resourceLoader->load("assets/shaders/VertShader.glsl"));
     resourceTypes::ResourceString* strPointer2 = reinterpret_cast<resourceTypes::ResourceString*>(
@@ -81,9 +83,11 @@ void Game::update() {
     //cube.setParent(rootObject.get());
 
     for (GameObject& object : rootObject->getAllChildrenRecursive()) {
-        if (dynamic_cast<IRenderable*>(&object) != nullptr)
+        IRenderable* renderable;
+        if (renderable = dynamic_cast<IRenderable*>(&object)) {
             //logger.log((std::stringstream("logging: ") << dynamic_cast<IRenderable*>(&object)).str(), Logger::LOGLEVEL_DEBUG);
-            renderer->push(*reinterpret_cast<IRenderable*>(&object));
+            renderer->push(*renderable);
+        }
     }
     renderer->renderFrame();
 

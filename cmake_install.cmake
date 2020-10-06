@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/wotth/src/someFPS
+# Install script for directory: C:/Users/wotth/source/repos/hyper1423/SomeFPS
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/ALL_BUILD")
+  set(CMAKE_INSTALL_PREFIX "C:/Users/wotth/Source/Repos/hyper1423/SomeFPS/out/install/x64-Debug")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/wotth/src/someFPS/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/wotth/source/repos/hyper1423/SomeFPS/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

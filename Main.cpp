@@ -3,9 +3,6 @@
 #include "callbacks/callbacks.hpp"
 #include "logger/logger.hpp"
 
-#include "include/glm/glm.hpp"
-#include "include/libpng/png.h"
-
 #include <iostream>
 #include <memory>
 

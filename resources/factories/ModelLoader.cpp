@@ -7,9 +7,9 @@
 #include <assimp/scene.h>
 #include <assimp/postprocess.h>
 
-Mesh processMesh(const aiMesh&);
+static Mesh processMesh(const aiMesh& mesh);
 
-std::vector<Mesh> processNode(const aiScene& scene, const aiNode& node) {
+static std::vector<Mesh> processNode(const aiScene& scene, const aiNode& node) {
     std::vector<Mesh> result;
     for (unsigned int i = 0; i < node.mNumMeshes; i++) {
         aiMesh* mesh = scene.mMeshes[node.mMeshes[i]];
@@ -22,7 +22,7 @@ std::vector<Mesh> processNode(const aiScene& scene, const aiNode& node) {
     return result;
 }
 
-Mesh processMesh(const aiMesh& mesh) {
+static Mesh processMesh(const aiMesh& mesh) {
     VertexArray::TypeVertices resultVertices;
     VertexArray::TypeIndices resultIndices;
 
@@ -63,12 +63,12 @@ Mesh processMesh(const aiMesh& mesh) {
         std::array<unsigned short, 3> triplet;
         for (unsigned int j = 0; j < face.mNumIndices; j++) {
             static unsigned int count = 0;
+            triplet[count] = face.mIndices[j];
+            count++;
             if (count >= 3) {
                 count = 0;
                 resultIndices.push_back(triplet);
             }
-            triplet[count] = face.mIndices[j];
-            count++;
         }
     }
     

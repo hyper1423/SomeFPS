@@ -40,7 +40,7 @@ VertexArray& VertexArray::setVBOData(TypeVertices vertices, numeralTypes::enumIn
 VertexArray& VertexArray::setIBOData(TypeIndices indexes, numeralTypes::enumInt usage) {
 	std::vector<unsigned short> indicesVector;
 	for (std::array<unsigned short, 3>& face : indexes) {
-		for (float element : face) {
+		for (unsigned short element : face) {
 			indicesVector.push_back(element);
 		}
 	}

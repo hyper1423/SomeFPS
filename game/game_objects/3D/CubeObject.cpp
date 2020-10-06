@@ -5,11 +5,11 @@
 Cube::Cube(GameObject* parent) {
 	setParent(parent);
 	ResourceLoader& resourceLoader = *Game::getInstance().getResourceLoader();
-	resourceLoader.registerFactory(factories::ModelLoader());
+	resourceLoader.setLoaderStrategy(factories::ModelLoader());
 	
 	resourceTypes::ResourceModel* model = reinterpret_cast<resourceTypes::ResourceModel*>(
 		resourceLoader.load("assets/models/3D/cube.fbx"));
-	this->model = model->get();
+	this->model = model->resource;
 	
 	/*
 	std::vector<Mesh> mesh = {
@@ -37,7 +37,7 @@ Cube::Cube(GameObject* parent) {
 	*/
 	
 
-	resourceLoader.registerFactory(factories::TextLoader());
+	resourceLoader.setLoaderStrategy(factories::TextLoader());
 
 	resourceTypes::ResourceString* vertGLSL = reinterpret_cast<resourceTypes::ResourceString*>(
 		resourceLoader.load("assets/shaders/VertShader.glsl"));
@@ -45,13 +45,17 @@ Cube::Cube(GameObject* parent) {
 		resourceLoader.load("assets/shaders/FragShader.glsl"));
 	if (vertGLSL && fragGLSL) {
 		std::map<constants::ShaderTypes, std::string> shaderMap;
-		shaderMap[constants::ShaderTypes::VERTEX_SHADER] = vertGLSL->get();
-		shaderMap[constants::ShaderTypes::FRAGMENT_SHADER] = fragGLSL->get();
+		shaderMap[constants::ShaderTypes::VERTEX_SHADER] = vertGLSL->resource;
+		shaderMap[constants::ShaderTypes::FRAGMENT_SHADER] = fragGLSL->resource;
 		material = Material(std::make_shared<ShaderProgram>(shaderMap));
 	}
 
+	resourceLoader.setLoaderStrategy(factories::ImageLoader());
+	
+	resourceTypes::ResourceImage* texture = reinterpret_cast<resourceTypes::ResourceImage*>(
+		resourceLoader.load("assets/shaders/VertShader.glsl"));
+
 	//transformation.setScale(glm::vec3(0.1, 0.1, 0.1));
-	//transformation.setRotation(glm::vec3(1, 1, 0));
 }
 Cube::~Cube() {
 	setParent(nullptr);

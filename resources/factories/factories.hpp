@@ -7,16 +7,18 @@
 #include <cstddef>
 
 namespace factories {
-
-class TextLoader {
-public:
-    resourceTypes::Resource* operator()(std::vector<std::byte> bytes);
-};
-class ModelLoader {
-public:
-    resourceTypes::Resource* operator()(std::vector<std::byte> bytes);
-};
-
+    class TextLoader {
+    public:
+        resourceTypes::Resource* operator()(std::vector<std::byte> bytes);
+    };
+    class ModelLoader {
+    public:
+        resourceTypes::Resource* operator()(std::vector<std::byte> bytes);
+    };
+    class ImageLoader {
+    public:
+        resourceTypes::Resource* operator()(std::vector<std::byte> bytes);
+    };
 }
 
 #endif

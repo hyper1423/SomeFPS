@@ -1,5 +1,5 @@
-#ifndef SHADER_TYPES_HPP
-#define SHADER_TYPES_HPP
+#ifndef SHADER_CONSTANTS_HPP
+#define SHADER_CONSTANTS_HPP
 
 #include <GL/glew.h>
 

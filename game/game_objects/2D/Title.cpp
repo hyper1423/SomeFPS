@@ -5,7 +5,7 @@
 
 TitleScreen::TitleScreen() {
     ResourceLoader* fileLoader = Game::getInstance().getResourceLoader();
-    fileLoader->registerFactory()
+    fileLoader->setLoaderStrategy()
 }
 
 const VertexArray::TypeVertices& TitleScreen::getVertices() const {
